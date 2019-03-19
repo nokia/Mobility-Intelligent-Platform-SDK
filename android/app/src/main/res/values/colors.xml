@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0b1e55</color>
+    <color name="colorPrimaryDark">#0e235f</color>
+    <color name="colorAccent">#0cff0f</color>
+    <color name="nokiaBlueColor">#26428d</color>
+    <color name="blueColor">#13c9ff</color>
+    <color name="whiteColor">#fff</color>
+    <color name="greenColor">#0cff0f</color>
+    <color name="orangeColor">#fd9a1f</color>
+    <color name="authBackgroundColor">#11245c</color>
+    <color name="with">#fff</color>
+    <color name="black">#313131</color>
+    <color name="red">#ae1a1a</color>
+    <color name="bg_color">#f6f6f6</color>
+    <color name="holo_green_light">#ff99cc00</color>
+    <color name="gray">#acacac</color>
+
+    <color name="mapbox_navigation_route_layer_blue">#00ff00</color>
+    <color name="mapbox_navigation_view_color_banner_background">#061e54</color>
+    <color name="mapbox_navigation_view_color_banner_background_dark">#061e54</color>
+    <color name="mapbox_navigation_view_color_list_background">#061e54</color>
+    <color name="mapbox_navigation_view_color_list_background_dark">#061e54</color>
+
+</resources>

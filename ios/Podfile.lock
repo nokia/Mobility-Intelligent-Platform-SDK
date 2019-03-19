@@ -1,0 +1,138 @@
+PODS:
+  - AppCenter (1.7.1):
+    - AppCenter/Analytics (= 1.7.1)
+    - AppCenter/Crashes (= 1.7.1)
+  - AppCenter/Analytics (1.7.1):
+    - AppCenter/Core
+  - AppCenter/Core (1.7.1)
+  - AppCenter/Crashes (1.7.1):
+    - AppCenter/Core
+  - AWSAPIGateway (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSAuthCore (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSAuthUI (2.6.22):
+    - AWSAuthCore (= 2.6.22)
+    - AWSCore (= 2.6.22)
+  - AWSCognitoIdentityProvider (2.6.22):
+    - AWSCognitoIdentityProviderASF (= 1.0.1)
+    - AWSCore (= 2.6.22)
+  - AWSCognitoIdentityProviderASF (1.0.1)
+  - AWSCore (2.6.22)
+  - AWSDynamoDB (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSMobileClient (2.6.22):
+    - AWSAuthCore (= 2.6.22)
+  - AWSUserPoolsSignIn (2.6.22):
+    - AWSAuthCore (= 2.6.22)
+    - AWSCognitoIdentityProvider (= 2.6.22)
+  - Charts (3.1.1):
+    - Charts/Core (= 3.1.1)
+  - Charts/Core (3.1.1)
+  - GRDB.swift (2.10.0)
+  - LocoKit (5.2.0):
+    - LocoKit/Base (= 5.2.0)
+  - LocoKit/Base (5.2.0):
+    - LocoKitCore (= 5.2.0)
+    - Upsurge (~> 0.10)
+  - LocoKit/LocalStore (5.2.0):
+    - GRDB.swift (~> 2.10)
+    - LocoKit/Base
+  - LocoKitCore (5.2.0)
+  - Mapbox-iOS-SDK (4.1.0)
+  - MapboxCoreNavigation (0.18.1):
+    - MapboxDirections.swift (~> 0.21.0)
+    - MapboxMobileEvents (~> 0.4)
+    - Turf (~> 0.1)
+  - MapboxDirections.swift (0.21.0):
+    - Polyline (~> 4.2)
+  - MapboxGeocoder.swift (0.8.1)
+  - MapboxMobileEvents (0.4.1)
+  - MapboxNavigation (0.18.1):
+    - Mapbox-iOS-SDK (~> 4.0)
+    - MapboxCoreNavigation (= 0.18.1)
+    - MapboxSpeech (~> 0.0.1)
+    - Solar (~> 2.1)
+  - MapboxSpeech (0.0.1)
+  - Polyline (4.2.0)
+  - Solar (2.1.0)
+  - SwiftNotes (1.1.0)
+  - Turf (0.2.0)
+  - Upsurge (0.10.2)
+
+DEPENDENCIES:
+  - AppCenter
+  - AWSAPIGateway
+  - AWSAuthCore
+  - AWSAuthUI
+  - AWSDynamoDB
+  - AWSMobileClient
+  - AWSUserPoolsSignIn
+  - Charts
+  - LocoKit
+  - LocoKit/LocalStore
+  - Mapbox-iOS-SDK
+  - MapboxGeocoder.swift
+  - MapboxNavigation
+  - SwiftNotes
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AppCenter
+    - AWSAPIGateway
+    - AWSAuthCore
+    - AWSAuthUI
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - AWSDynamoDB
+    - AWSMobileClient
+    - AWSUserPoolsSignIn
+    - Charts
+    - GRDB.swift
+    - LocoKit
+    - LocoKitCore
+    - Mapbox-iOS-SDK
+    - MapboxCoreNavigation
+    - MapboxDirections.swift
+    - MapboxGeocoder.swift
+    - MapboxMobileEvents
+    - MapboxNavigation
+    - MapboxSpeech
+    - Polyline
+    - Solar
+    - SwiftNotes
+    - Turf
+    - Upsurge
+
+SPEC CHECKSUMS:
+  AppCenter: 53349f138e596f2514f7559bb50a7e6e55219f17
+  AWSAPIGateway: 7dad85e97b4431a78639bc8d47c8aba2bc4f3dd0
+  AWSAuthCore: cbe932da2bd77b94e0efa73c81428b3646796427
+  AWSAuthUI: f1bc40e3a42d589efa27153158b78842823e92f7
+  AWSCognitoIdentityProvider: f7d15744ca3d70270de05a212e501f29a4a06307
+  AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
+  AWSCore: faae134779f0f6e46a8d426c0ccc02e34466b785
+  AWSDynamoDB: b2f5b6a98d40f875e89a974d56b62c418e872972
+  AWSMobileClient: 091482a8bf8d9a92bc290fb2137892e2055e9b61
+  AWSUserPoolsSignIn: 6df1d4a3293be08a58d8d99d2152fad2bb9616f3
+  Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
+  GRDB.swift: 9859cab1b990eac62ee550d3d2208ec1b44f76af
+  LocoKit: 196b61a7095abd3df43b3543b3e45c87e6b08e63
+  LocoKitCore: 98d8eab0dd9694015e0ba32777f6f50e1f4bb337
+  Mapbox-iOS-SDK: f0a9813d5f08c096c1199eceb57ec6102b19cf54
+  MapboxCoreNavigation: 3754c160e928dbcd58720de808b1f67db52b20e6
+  MapboxDirections.swift: 14d32d1601834e15c930cbab4201e57b0f7a2218
+  MapboxGeocoder.swift: 354fccd4834bae4c5b792428559eb87d994d2cf5
+  MapboxMobileEvents: c198687e2ce67b1a98bd504c260aef35ace78ae2
+  MapboxNavigation: 619fda6eb4b4ce48df8676041f017e4698c8dc35
+  MapboxSpeech: 6cc9b3d53adc2988af3ebc704dd17907b84a3f9f
+  Polyline: 3d69f75bb136357e27291d439d0436c6ebda57a4
+  Solar: 2dc6e7cc39186cb0c8228fa08df76fb50c7d8f24
+  SwiftNotes: 51d71568d7515c5c82aa791b88900cf8059b8beb
+  Turf: 65817136031583da7ea2b43e6611dd10ddbdab2f
+  Upsurge: 5866beadc3da27f91c5df4ac795deb3f3238d678
+
+PODFILE CHECKSUM: 5a9c185320c8d97b5afe213847c27a4aaf027364
+
+COCOAPODS: 1.5.3

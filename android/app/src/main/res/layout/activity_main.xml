@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:id="@+id/idScrollViewLLY"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blueColor"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Mon Historique"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Zones dans lesquelles j'ai partagé mes données"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+            <mip.belllabs.moveinsaclay.UI.CustomMapview
+                android:id="@+id/mapViewId"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                mapbox:mapbox_cameraTargetLat="48.66"
+                mapbox:mapbox_cameraTargetLng="2.24"
+                mapbox:mapbox_cameraZoom="9"
+                mapbox:mapbox_styleUrl="mapbox://styles/abenyahya/cjpsdwe1l00dw2sql5kghgdfn">
+
+            </mip.belllabs.moveinsaclay.UI.CustomMapview>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Switch
+                        android:id="@+id/dataSharingSwitchId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:background="@color/nokiaBlueColor"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Je partage mes données"
+                        android:textColor="@color/with"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:trackTint="@color/cardview_light_background" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/idRawDataRecordedLLY"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/idRawDtaRecording"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blueColor"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Ma Mobilité Actuelle"
+                    android:textColor="@color/with"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_color"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+                    <!-- second element of the row that is shown in the screenshot-->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/mobility_data_icon" />
+
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <!-- first element of the row that is the part of table but it is invisible-->
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="GPS"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <!-- second element of the row that is shown in the screenshot-->
+                    <TextView
+                        android:id="@+id/idGpsState"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="off"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+                    <!-- first element of the row that is the part of table but it is invisible-->
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Vitesse"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <!-- second element of the row that is shown in the screenshot-->
+                    <TextView
+                        android:id="@+id/idSpeedState"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="off"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+                    <!-- first element of the row that is the part of table but it is invisible-->
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Date"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <!-- second element of the row that is shown in the screenshot-->
+                    <TextView
+                        android:id="@+id/timeStampId"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="off"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+                    <!-- first element of the row that is the part of table but it is invisible-->
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Distance"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <!-- second element of the row that is shown in the screenshot-->
+
+                    <TextView
+                        android:id="@+id/distanceId"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="off"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+                    <!-- first element of the row that is the part of table but it is invisible-->
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Incitation"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <!-- second element of the row that is shown in the screenshot-->
+                    <TextView
+                        android:id="@+id/id_incitation"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="off"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+                    <!-- first element of the row that is the part of table but it is invisible-->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/motion_mode_icon" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+
+
+                    android:textAlignment="viewStart">
+                    <!-- first element of the row that is the part of table but it is invisible-->
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Mode Detecté "
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+                    <!-- second element of the row that is shown in the screenshot-->
+                    <TextView
+                        android:id="@+id/transportyModeId"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="off"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg_color"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Corrigez si erreur dans le mode detecté :"
+                    android:textColor="@color/red" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg_color"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <Switch
+                    android:id="@+id/automotive_voiture_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Voiture"
+                    android:textAlignment="textEnd"
+                    android:trackTint="@color/authBackgroundColor" />
+
+                <Switch
+                    android:id="@+id/automotive_Bus_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Bus"
+                    android:textAlignment="textEnd"
+                    android:trackTint="@color/authBackgroundColor" />
+
+                <Switch
+                    android:id="@+id/automotive_train_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Train"
+                    android:textAlignment="textEnd"
+                    android:trackTint="@color/authBackgroundColor" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/idMobilityDtaAnalysis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blueColor"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:background="@color/blueColor"
+                    android:src="@drawable/mobility_data_analysis_icon" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="Mon Profil Mobilité"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <LinearLayout
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/nokiaBlueColor"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/transport_mode_icon" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Mode de Mobilité principal"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/idMostUserTransportMode"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@color/mapbox_navigation_route_layer_congestion_yellow"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp">
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/nokiaBlueColor"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/speed_icon" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Vitesse Moyenne, Distance, Durée"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/idAvarageSpeedPerDay"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=" - Km/h"
+                    android:textColor="@color/orangeColor"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/id_cost_of_mobility_message"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="- Km Parcourus"
+                    android:textColor="@color/orangeColor"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/idDuree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=" -h de mobilité"
+                    android:textColor="@color/orangeColor"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp">
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/nokiaBlueColor"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="61dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/cost_icon" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Coût estimé du mode principal"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/id_cost_of_mobility_per_day"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+
+                    android:text="- €"
+                    android:textColor="@color/orangeColor"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp">
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/nokiaBlueColor"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/carbon_icon" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Empreinte Carbone du mode principal"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/id_co2_level"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=" - Arbre(s)"
+                    android:textColor="@color/orangeColor"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:text="sont nécessaires pour compenser mon empreinte carbone annuelle."
+                    android:textColor="@color/orangeColor"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blueColor"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:src="@drawable/your_rewards_icon" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="Incitations"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/incitation_icon" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Zones d'incitation"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:text="Ces zones sont des zones de congestion. Vous recevrez des MIPS si vous les évitez, en voiture, sur certaines heures"
+                    android:textColor="@color/orangeColor"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <mip.belllabs.moveinsaclay.UI.CustomMapview
+                android:id="@+id/incitation_map_view_id"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                mapbox:mapbox_cameraTargetLat="48.7"
+                mapbox:mapbox_cameraTargetLng="2.18"
+                mapbox:mapbox_cameraZoom="9"
+                mapbox:mapbox_styleUrl="mapbox://styles/abenyahya/cjpv5yqcg0rc82sp2667vvic3">
+
+            </mip.belllabs.moveinsaclay.UI.CustomMapview>
+
+            <LinearLayout
+                android:id="@+id/idTheReward"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ff9a19"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Mes incitations"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tokenId"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="0 MIPS"
+                    android:textColor="#0b1e54"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="71dp"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:src="@drawable/gift" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/idMobilityServeys"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blueColor"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:src="@drawable/mobility_servey_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="Enquêtes"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ViewFlipper
+                android:id="@+id/view_filpper_id"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="300dp">
+
+                    <Button
+                        android:id="@+id/survey_button_id"
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:background="@color/nokiaBlueColor"
+                        android:elevation="10dp"
+                        android:text="1 nouvelle enquête disponible"
+                        android:textColor="@color/whiteColor">
+
+                    </Button>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp">
+
+                    <mip.belllabs.moveinsaclay.UI.CustomWebview
+                        android:id="@+id/idWebView"
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp"
+                        android:fadeScrollbars="true"
+                        android:fadingEdge="vertical"
+                        tools:ignore="WebViewLayout">
+
+                    </mip.belllabs.moveinsaclay.UI.CustomWebview>
+
+
+                </RelativeLayout>
+
+            </ViewFlipper>
+        </LinearLayout>
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

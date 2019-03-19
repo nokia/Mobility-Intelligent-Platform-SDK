@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '12.1'
+
+target 'MIP' do
+  use_frameworks!
+  pod 'LocoKit'
+  pod 'LocoKit/LocalStore'
+  pod 'SwiftNotes'
+  pod 'AWSAuthCore'
+  pod 'AWSAuthUI'
+  pod 'AWSUserPoolsSignIn'
+  pod 'AWSAPIGateway'
+  pod 'AWSMobileClient'
+  pod 'AWSDynamoDB'
+  pod 'Mapbox-iOS-SDK'
+  pod 'MapboxNavigation'
+  pod 'MapboxGeocoder.swift'
+  pod 'AppCenter'
+  pod 'Charts'
+end
