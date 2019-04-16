@@ -110,7 +110,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
     func setupLocoKit () {
         self.timeline = TimelineManager()
         timeline.activityTypeClassifySamples = true
-        LocoKitService.apiKey = "LOCOKIT_API_KEY"
+        LocoKitService.apiKey = "b78df95038a941de96cb3d7b47d814e1"
         loco.locationManager.allowsBackgroundLocationUpdates = true
         loco.maximumDesiredLocationAccuracy = kCLLocationAccuracyNearestTenMeters
         loco.recordPedometerEvents = true
@@ -482,6 +482,78 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
         return true
     }
     
+    func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
+        //Realtime
+        /*if let url = URL(string: "Navitia or Open System APIs")*/
+        /*let url = URL(fileURLWithPath: Bundle.main.path(forResource: "orsay_car", ofType: "geojson")!)
+         source = MGLShapeSource(identifier: "layer_source", url: url, options: nil)
+         style.addSource(source)*/
+        //}
+        
+        /*DispatchQueue.global().async {
+            guard let url = Bundle.main.url(forResource: "orsay_car", withExtension: "geojson") else {
+                preconditionFailure("Failed to load local GeoJSON file")
+            }
+            
+            guard let data = try? Data(contentsOf: url) else {
+                preconditionFailure("Failed to decode GeoJSON file")
+            }
+            
+            DispatchQueue.main.async {
+                guard let feature = try? MGLShape(data: data, encoding: String.Encoding.utf8.rawValue) as? MGLShapeCollectionFeature else {
+                    fatalError("Could not cast to specified MGLShapeCollectionFeature")
+                }
+                
+                // Create source and add it to the map style.
+                if let currentSource = mapView.style?.source(withIdentifier: "layer_source") as? MGLShapeSource {
+                    if let layer10_toremove = mapView.style?.layer(withIdentifier: "layer10") {
+                        style.removeLayer(layer10_toremove)
+                    }
+                    if let layer20_toremove = mapView.style?.layer(withIdentifier: "layer20") {
+                        style.removeLayer(layer20_toremove)
+                    }
+                    if let layer30_toremove = mapView.style?.layer(withIdentifier: "layer30") {
+                        style.removeLayer(layer30_toremove)
+                    }
+                    style.removeSource(currentSource)
+                }
+                let source = MGLShapeSource(identifier: "layer_source", shape: feature, options: nil)
+                style.addSource(source)
+                
+                let layer10 = MGLFillStyleLayer(identifier: "layer10", source: source)
+                layer10.predicate = NSPredicate(format: "value = 600")
+                layer10.fillColor = NSExpression(forConstantValue:UIColor(red: 10/255, green: 10/255, blue: 255/255, alpha: 0.3))
+                layer10.fillOutlineColor = NSExpression(forConstantValue:UIColor.blue)
+                
+                let layer20 = MGLFillStyleLayer(identifier: "layer20", source: source)
+                layer20.predicate = NSPredicate(format: "value = 1200")
+                layer20.fillColor = NSExpression(forConstantValue:UIColor(red: 10/255, green: 10/255, blue: 155/255, alpha: 0.3))
+                layer20.fillOutlineColor = NSExpression(forConstantValue:UIColor.blue)
+                
+                
+                let layer30 = MGLFillStyleLayer(identifier: "layer30", source: source)
+                layer30.predicate = NSPredicate(format: "value = 1800")
+                layer30.fillColor = NSExpression(forConstantValue:UIColor(red: 10/255, green: 10/255, blue: 55/255, alpha: 0.2))
+                layer30.fillOutlineColor = NSExpression(forConstantValue:UIColor.blue)
+                
+                style.addLayer(layer10)
+                style.insertLayer(layer20, below: layer10)
+                style.insertLayer(layer30, below: layer20)
+            }
+        }*/
+        /*let point = MGLPointFeature()
+        point.coordinate = CLLocationCoordinate2D(latitude: 48.730543, longitude: 2.163099)
+        mShape.append(point)
+        let source = MGLShapeSource(identifier: "nudgeAreas", features: mShape as! [MGLShape & MGLFeature], options: nil)
+        let cicle_layer = MGLCircleStyleLayer(identifier: "nudgeAreas", source: source)
+        cicle_layer.circleRadius = NSExpression(forConstantValue: NSNumber(value: 500.0))
+        cicle_layer.circleOpacity = NSExpression(forConstantValue: 0.45)
+        cicle_layer.circleStrokeColor = NSExpression(forConstantValue: UIColor.white.withAlphaComponent(0.75))
+        cicle_layer.circleStrokeWidth = NSExpression(forConstantValue: 2)
+        cicle_layer.circleColor = NSExpression(forConstantValue: UIColor.green)
+        style.addLayer(cicle_layer)*/
+    }
+    
     
     func mapView(_ mapView: MGLMapView, tapOnCalloutFor annotation: MGLAnnotation) {
         startNavigation()
@@ -535,6 +607,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
     @objc func didLongPress(_ sender: UILongPressGestureRecognizer) {
         guard sender.state == .began else { return }
         
+        // Converts point where user did a long press to map coordinates
         let point = sender.location(in: mapboxView)
         let coordinate = mapboxView.convert(point, toCoordinateFrom: mapboxView)
         
@@ -546,6 +619,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
             mapboxView.style?.removeSource(source_route!)
         }
         
+        // Create a basic point annotation and add it to the map
         destinationAnnotation = MGLPointAnnotation()
         destinationAnnotation?.coordinate = coordinate
         destinationAnnotation?.title = "Mode Navigation"
@@ -555,6 +629,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
         if !CLLocationManager.locationServicesEnabled() {
             self.createSettingsAlertController(title: "Activation GPS", message: "Nous aurions besoin de votre position GPS pour le partage de vos données de mobilité et la navigation. \n Settings > Privacy > Location Services")
         } else {
+            // Calculate the route from the user's location to the set destination
             calculateRoute(from: (mapboxView.userLocation!.coordinate), to: coordinate) { (route, error) in
                 if error != nil {
                     print("Error calculating route")
@@ -562,6 +637,60 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
             }
         }
     }
+    
+    /*func searchBar(_ searchBar: UISearchBar,
+                   textDidChange searchText: String){
+        if (!searchActive){
+            print (searchText)
+        }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false;
+        self.view.endEditing(true)
+        let options = ForwardGeocodeOptions(query: mapSearch.text!)
+        options.allowedISOCountryCodes = ["FR"]
+        options.focalLocation = CLLocation(latitude: 48.669064, longitude: 2.234261)
+        options.allowedScopes = [.address, .pointOfInterest, .place]
+        options.autocompletesQuery = true
+        if (destinationAnnotation != nil){
+            mapboxView.removeAnnotation(destinationAnnotation!)
+        }
+        let task = geocoder?.geocode(options) { (placemarks, attribution, error) in
+            guard let placemark = placemarks?.first else {
+                return
+            }
+            
+            print(placemark.name)
+            print(placemark.qualifiedName)
+            
+            let coordinate = placemark.location?.coordinate
+            self.destinationAnnotation = MGLPointAnnotation()
+            self.destinationAnnotation?.coordinate = coordinate!
+            self.destinationAnnotation?.title = "Mode Navigation"
+            self.destinationAnnotation?.subtitle = "Avec #MoveInSaclay !"
+            self.mapboxView.addAnnotation(self.destinationAnnotation!)
+            
+            self.calculateRoute(from: (self.mapboxView.userLocation!.coordinate), to: coordinate!) { (route, error) in
+                if error != nil {
+                    print("Error calculating route")
+                }
+            }
+            print("\(coordinate?.latitude), \(coordinate?.longitude)")
+        }
+    }*/
     
     @IBAction func onDeleteData(_ sender: Any) {
         createDeleteDataController();

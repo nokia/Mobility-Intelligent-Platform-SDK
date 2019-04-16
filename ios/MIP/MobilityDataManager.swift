@@ -84,24 +84,6 @@ class MobilityDataManager {
     
     @available(iOS 11.0, *)
     static func predictTransportMode(basemotionmode:NSNumber, lat:NSNumber, lng:NSNumber, speed:NSNumber, predictionTextView: UILabel){
-        let mis_scaler = mis_transportMode_scaler()
-        let mis_model = mis_transportMode()
-        guard let mis_scalerInput = try? MLMultiArray(shape:[1,4], dataType:MLMultiArrayDataType.double) else {
-            fatalError("Unexpected runtime error. MLMultiArray")
-        }
-        mis_scalerInput[0] = basemotionmode
-        mis_scalerInput[1] = lat
-        mis_scalerInput[2] = lng
-        mis_scalerInput[3] = speed
-        guard let scaler_output = try? mis_scaler.prediction(mis_data: mis_scalerInput) else {
-            fatalError("Unexpected runtime error. mis_scaler")
-        }
-        print("Scaler: \(scaler_output.mis_data_scaler)")
-        guard let prediction = try? mis_model.prediction(mis_data_scaler: scaler_output.mis_data_scaler) else {
-            fatalError("Unexpected runtime error. mis_model")
-        }
-        print ("Prediction: \(prediction.predicted_transport_mode)")
-        predictionTextView.text = String.getFrenchTranslationOf(word: prediction.predicted_transport_mode)
     }
 }
 

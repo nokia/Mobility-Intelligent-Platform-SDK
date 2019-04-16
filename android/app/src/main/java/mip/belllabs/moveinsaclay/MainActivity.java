@@ -134,7 +134,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private  Switch automotive_voiture,automotive_Bus,automotive_train;
     private boolean mMotionAvailble = false;
     private boolean dataSharing = false;
-    private boolean did_enter_nudgeZone = false;
     private String mActivity = " ";
     private  String transportMode="";
     private  String modeAccuracy="";
@@ -994,7 +993,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         CrashManager.register(this);
     }
     private void checkForUpdates() {
-        // Remove this for store builds!
         UpdateManager.register(this);
     }
     private void unregisterManagers() {

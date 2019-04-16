@@ -381,6 +381,25 @@ class WalletManager {
                 ] as [String : Any]
             print (httpBody)
             ProfileManager.doInvokeProfilAPI_distance(httpBody: httpBody)
+            /*let nudge_lat = lastSample.filteredLocations?.last?.coordinate.latitude
+            let nudge_lng = lastSample.filteredLocations?.last?.coordinate.longitude
+            if (isInParisSaclay(latitude: nudge_lat!, longitude: nudge_lng!)){
+                token_number = WalletManager.getCurrentToken()
+                if (token_number >= 0){
+                    token_number = token_number + tripDistance * 0.001
+                    WalletManager.setNewTokenValue(token: token_number, tokenUIfield: tokenUIfield)
+                    print (token_number)
+                    let transactionBody = [
+                        "description" : "Nudge KM",
+                        "date" : lastSample.date.debugDescription,
+                        "transactionid" : UUID().uuidString,
+                        "numbertoken" : token_number,
+                        "latitude": lastSample.filteredLocations?.last?.coordinate.latitude,
+                        "longitude": lastSample.filteredLocations?.last?.coordinate.longitude
+                        ] as [String : Any]
+                    WalletManager.doInvokeRewardsAPI(httpBody : transactionBody)
+                }
+            }*/
         }
     }
     

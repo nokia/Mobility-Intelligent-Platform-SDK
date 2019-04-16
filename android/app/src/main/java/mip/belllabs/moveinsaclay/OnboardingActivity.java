@@ -61,7 +61,7 @@ public class OnboardingActivity extends AppCompatActivity  implements  AdapterVi
             public void onClick(View view) {
                 ProgressDialog.show(mContext, "MoveInSaclay", "Chargement en cours, veuillez patienter...");
                 enableLocationComponent();
-                prefEditor.putBoolean("Onboarding_18",true);
+                prefEditor.putBoolean("Onboarding_21",true);
                 prefEditor.commit();
             }
         });
@@ -73,13 +73,10 @@ public class OnboardingActivity extends AppCompatActivity  implements  AdapterVi
             }
         });
         manageUserTagSpinner();
-        boolean onboard = settings.getBoolean("Onboarding_18", false);
+        boolean onboard = settings.getBoolean("Onboarding_21", false);
         if (onboard) {
             ProgressDialog.show(this, "MoveInSaclay", "Chargement en cours, veuillez patienter...");
             enableLocationComponent();
-        } else {
-            prefEditor.putString("UserTag",UserTag);
-            prefEditor.commit();
         }
     }
 
@@ -102,6 +99,9 @@ public class OnboardingActivity extends AppCompatActivity  implements  AdapterVi
         if (userTag != null) {
             int spinnerPosition = adapter.getPosition(userTag);
             spinner.setSelection(spinnerPosition);
+        } else {
+            prefEditor.putString("UserTag",UserTag);
+            prefEditor.commit();
         }
     }
 

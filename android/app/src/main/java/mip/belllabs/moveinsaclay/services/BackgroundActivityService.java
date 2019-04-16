@@ -7,11 +7,15 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.graphics.Color;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -20,6 +24,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
+import mip.belllabs.moveinsaclay.R;
 import mip.belllabs.moveinsaclay.Utils.Constants;
 
 public class BackgroundActivityService extends Service {
@@ -47,7 +52,9 @@ public class BackgroundActivityService extends Service {
         mActivityRecognitionClient = new ActivityRecognitionClient(this);
         mIntentService = new Intent(this, ActivityIntentService.class);
         mPendingIntent = PendingIntent.getService(this, 1, mIntentService, PendingIntent.FLAG_UPDATE_CURRENT);
-        startForeground(12345678, getNotification());
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForeground(12345678, getNotification());
+        }
         requestActivityUpdatesButtonHandler();
     }
 

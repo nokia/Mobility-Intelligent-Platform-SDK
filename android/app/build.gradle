@@ -11,7 +11,7 @@ android {
         applicationId "mip.belllabs.moveinsaclay"
         minSdkVersion 23
         targetSdkVersion 28
-        versionCode 18
+        versionCode 21
         versionName "2.4.3"
         multiDexEnabled true
         manifestPlaceholders = [HOCKEYAPP_APP_ID: "cedbec84a53e45039e87f358324595c6"]

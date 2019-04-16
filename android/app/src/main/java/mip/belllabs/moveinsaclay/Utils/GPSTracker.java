@@ -22,6 +22,7 @@ public final class GPSTracker implements LocationListener {
 
     private final Context mContext;
     public boolean isGPSEnabled = false;
+    public boolean isMock = false;
     boolean isNetworkEnabled = false;
     public boolean canGetLocation = false;
     Location location;
@@ -122,11 +123,18 @@ public final class GPSTracker implements LocationListener {
 
     @Override
     public void onLocationChanged(Location location) {
+        if (android.os.Build.VERSION.SDK_INT >= 18) {
+            isMock = location.isFromMockProvider();
+        } else {
+            isMock = Settings.Secure.getString(mContext.getContentResolver(), Settings.Secure.ALLOW_MOCK_LOCATION).equals("0");
+        }
+        Log.d("isMock", String.valueOf(isMock));
+
         this.location = location;
         latitude = location.getLatitude();
         longitude = location.getLongitude();
         speed =location.getSpeed();
-        canGetLocation= true;
+        canGetLocation= !isMock;
     }
 
     @Override

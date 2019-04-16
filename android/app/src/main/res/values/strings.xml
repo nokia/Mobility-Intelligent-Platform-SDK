@@ -21,6 +21,6 @@
     <string name="activity_unknown">unknown</string>
     <string name="activity_inrail">train</string>
     <string name="activity_inroad">car/bus</string>
-    <string name="mapbox_token">XXXX</string>
+    <string name="mapbox_token">pk.eyJ1IjoiYWJlbnlhaHlhIiwiYSI6ImNqZ2NudmwyeDA3dmoyeXRjZDNxdzJjNG8ifQ.aLaB9pXgQJuKcMfbSYkfvQ</string>
 
 </resources>

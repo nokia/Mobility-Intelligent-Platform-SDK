@@ -22,7 +22,7 @@ class OnboardingViewController: UIViewController  {
         manageUserTagPicker()
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-        let firstOnboarding = userDefaults.bool(forKey: "OnboardingAgree_V2.4.3_21")
+        let firstOnboarding = userDefaults.bool(forKey: "OnboardingAgree_V2.4.3_22")
         if (firstOnboarding){
             actionOnAgree()
         }
@@ -41,6 +41,7 @@ class OnboardingViewController: UIViewController  {
             var rowIndex = pickerData.index(of: usertag!)
             if(rowIndex == nil) { rowIndex = 0 }
             userType.selectRow(rowIndex!, inComponent: 0, animated: false)
+        } else {
             self.userDefaults.set(userTypeSelection, forKey: "UserTag")
         }
     }
@@ -66,7 +67,7 @@ class OnboardingViewController: UIViewController  {
     
     @IBAction func onAgree(_ sender: Any) {
         actionOnAgree()
-        userDefaults.set(true, forKey: "OnboardingAgree_V2.4.3_21")
+        userDefaults.set(true, forKey: "OnboardingAgree_V2.4.3_22")
     }
     
     func actionOnAgree(){
