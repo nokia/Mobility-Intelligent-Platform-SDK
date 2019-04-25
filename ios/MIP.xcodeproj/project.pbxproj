@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4209A3AB220C3D0E00FDAC9E /* NudgeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4209A3AA220C3D0E00FDAC9E /* NudgeArea.swift */; };
 		421C3B5C20E57A9C00C892A1 /* MotionActivityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C3B5B20E57A9C00C892A1 /* MotionActivityExtension.swift */; };
-		4220B82B21CB97C600BB0908 /* orsay_car.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 4220B82A21CB97C600BB0908 /* orsay_car.geojson */; };
 		4223656521B7D09800B18D8F /* MapTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4223656421B7D09800B18D8F /* MapTools.swift */; };
 		4223656721B7D19600B18D8F /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4223656621B7D19600B18D8F /* ProfileManager.swift */; };
 		4223656921B7D3C900B18D8F /* MobilityDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4223656821B7D3C900B18D8F /* MobilityDataManager.swift */; };
@@ -23,8 +22,6 @@
 		4255F033219EFC0F0043B3E5 /* AppCenterAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4255F031219EFC0F0043B3E5 /* AppCenterAnalytics.framework */; };
 		4255F034219EFC0F0043B3E5 /* AppCenterCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4255F032219EFC0F0043B3E5 /* AppCenterCrashes.framework */; };
 		4259BB6422302AF40064AD30 /* PortailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259BB6322302AF40064AD30 /* PortailViewController.swift */; };
-		425E59BB21FCEAEC00D7EB38 /* mis_transportMode_scaler.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 425E59B921FCEAEC00D7EB38 /* mis_transportMode_scaler.mlmodel */; };
-		425E59BC21FCEAEC00D7EB38 /* mis_transportMode.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 425E59BA21FCEAEC00D7EB38 /* mis_transportMode.mlmodel */; };
 		427E3750216CE0EC004BE654 /* AWSAPI_OZWRAU7P77_WalletManagerMobileHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E374C216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_WalletManagerMobileHubClient.m */; };
 		427E3751216CE0EC004BE654 /* AWSAPI_OZWRAU7P77_ResponseSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E374E216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_ResponseSchema.m */; };
 		427E3752216CE0EC004BE654 /* AWSAPI_OZWRAU7P77_RequestSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E374F216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_RequestSchema.m */; };
@@ -68,7 +65,6 @@
 		0471C3E421C942BA250337F9 /* Pods_MIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4209A3AA220C3D0E00FDAC9E /* NudgeArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgeArea.swift; sourceTree = "<group>"; };
 		421C3B5B20E57A9C00C892A1 /* MotionActivityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionActivityExtension.swift; sourceTree = "<group>"; };
-		4220B82A21CB97C600BB0908 /* orsay_car.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = orsay_car.geojson; sourceTree = "<group>"; };
 		4223656421B7D09800B18D8F /* MapTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTools.swift; sourceTree = "<group>"; };
 		4223656621B7D19600B18D8F /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		4223656821B7D3C900B18D8F /* MobilityDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilityDataManager.swift; sourceTree = "<group>"; };
@@ -83,8 +79,6 @@
 		4255F032219EFC0F0043B3E5 /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCenterCrashes.framework; sourceTree = "<group>"; };
 		4255F03521A2F0440043B3E5 /* SurveyMonkeyiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SurveyMonkeyiOSSDK.framework; sourceTree = "<group>"; };
 		4259BB6322302AF40064AD30 /* PortailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortailViewController.swift; sourceTree = "<group>"; };
-		425E59B921FCEAEC00D7EB38 /* mis_transportMode_scaler.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = mis_transportMode_scaler.mlmodel; sourceTree = "<group>"; };
-		425E59BA21FCEAEC00D7EB38 /* mis_transportMode.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = mis_transportMode.mlmodel; sourceTree = "<group>"; };
 		427E374A216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_RequestSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWSAPI_OZWRAU7P77_RequestSchema.h; path = MIP/Api/AWSAPI_OZWRAU7P77_RequestSchema.h; sourceTree = "<group>"; };
 		427E374B216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_ResponseSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWSAPI_OZWRAU7P77_ResponseSchema.h; path = MIP/Api/AWSAPI_OZWRAU7P77_ResponseSchema.h; sourceTree = "<group>"; };
 		427E374C216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_WalletManagerMobileHubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWSAPI_OZWRAU7P77_WalletManagerMobileHubClient.m; path = MIP/Api/AWSAPI_OZWRAU7P77_WalletManagerMobileHubClient.m; sourceTree = "<group>"; };
@@ -197,15 +191,6 @@
 			name = MIS_SDK;
 			sourceTree = "<group>";
 		};
-		425E59B821FCEAD200D7EB38 /* MLClassifier */ = {
-			isa = PBXGroup;
-			children = (
-				425E59B921FCEAEC00D7EB38 /* mis_transportMode_scaler.mlmodel */,
-				425E59BA21FCEAEC00D7EB38 /* mis_transportMode.mlmodel */,
-			);
-			path = MLClassifier;
-			sourceTree = "<group>";
-		};
 		425FDEAC21C2EDFB00F1A289 /* Main UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,7 +207,6 @@
 		4280F22B20E4172E0059AE16 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				4220B82A21CB97C600BB0908 /* orsay_car.geojson */,
 				428165E920F7A14C001708C4 /* Locations.swift */,
 				4209A3AA220C3D0E00FDAC9E /* NudgeArea.swift */,
 			);
@@ -288,7 +272,6 @@
 				42E4E1B320F50039001B7F16 /* APIGateway */,
 				421C3B5A20E57A7F00C892A1 /* Helpers */,
 				4280F22B20E4172E0059AE16 /* Data */,
-				425E59B821FCEAD200D7EB38 /* MLClassifier */,
 				42EA289C20E0D0E8004A9878 /* AppDelegate.swift */,
 				42EA28A620E0D0EA004A9878 /* Assets.xcassets */,
 				42EA28AB20E0D0EA004A9878 /* Info.plist */,
@@ -431,7 +414,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				428165E820F5EADC001708C4 /* awsconfiguration.json in Resources */,
-				4220B82B21CB97C600BB0908 /* orsay_car.geojson in Resources */,
 				42EA28AA20E0D0EA004A9878 /* LaunchScreen.storyboard in Resources */,
 				42EA28A720E0D0EA004A9878 /* Assets.xcassets in Resources */,
 				42A5394D21E8B8B300A112BA /* Settings.bundle in Resources */,
@@ -579,11 +561,9 @@
 				4223656921B7D3C900B18D8F /* MobilityDataManager.swift in Sources */,
 				42CDC5ED21551E42001EB7BB /* AWSAPI_V3DZAX3WY3_ResponseSchema.m in Sources */,
 				4259BB6422302AF40064AD30 /* PortailViewController.swift in Sources */,
-				425E59BB21FCEAEC00D7EB38 /* mis_transportMode_scaler.mlmodel in Sources */,
 				4223656721B7D19600B18D8F /* ProfileManager.swift in Sources */,
 				42E4E1BC20F50045001B7F16 /* AWSAPI_5AJLQ8PC10_RequestSchema.m in Sources */,
 				428165EA20F7A14C001708C4 /* Locations.swift in Sources */,
-				425E59BC21FCEAEC00D7EB38 /* mis_transportMode.mlmodel in Sources */,
 				427E3751216CE0EC004BE654 /* AWSAPI_OZWRAU7P77_ResponseSchema.m in Sources */,
 				4223656521B7D09800B18D8F /* MapTools.swift in Sources */,
 				4280F22A20E3CE770059AE16 /* MainViewController.swift in Sources */,
