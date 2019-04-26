@@ -65,7 +65,7 @@ class CustomDayStyle: DayStyle {
         super.apply()
         ArrivalTimeLabel.appearance().textColor = lightGrayColor
         BottomBannerView.appearance().backgroundColor = secondaryBackgroundColor
-        BottomBannerContentView.appearance().backgroundColor = secondaryBackgroundColor
+        BottomBannerContainerView.appearance().backgroundColor = secondaryBackgroundColor
         Button.appearance().textColor = #colorLiteral(red: 0.9842069745, green: 0.9843751788, blue: 0.9841964841, alpha: 1)
         CancelButton.appearance().tintColor = lightGrayColor
         DistanceLabel.appearance(whenContainedInInstancesOf: [InstructionsBannerView.self]).unitTextColor = secondaryLabelColor
@@ -136,7 +136,7 @@ class CustomNightStyle: NightStyle {
         super.apply()
         ArrivalTimeLabel.appearance().textColor = lightGrayColor
         BottomBannerView.appearance().backgroundColor = secondaryBackgroundColor
-        BottomBannerContentView.appearance().backgroundColor = secondaryBackgroundColor
+        BottomBannerContainerView.appearance().backgroundColor = secondaryBackgroundColor
         Button.appearance().textColor = #colorLiteral(red: 0.9842069745, green: 0.9843751788, blue: 0.9841964841, alpha: 1)
         CancelButton.appearance().tintColor = lightGrayColor
         DistanceLabel.appearance(whenContainedInInstancesOf: [InstructionsBannerView.self]).unitTextColor = secondaryLabelColor
@@ -181,7 +181,7 @@ class CustomNightStyle: NightStyle {
         
         DistanceRemainingLabel.appearance().normalTextColor = primaryTextColor
         BottomBannerView.appearance().backgroundColor = secondaryBackgroundColor
-        BottomBannerContentView.appearance().backgroundColor = secondaryBackgroundColor
+        BottomBannerContainerView.appearance().backgroundColor = secondaryBackgroundColor
         FloatingButton.appearance().backgroundColor = #colorLiteral(red: 0.1434620917, green: 0.1434366405, blue: 0.1819391251, alpha: 0.9037466989)
         ResumeButton.appearance().backgroundColor = #colorLiteral(red: 0.1434620917, green: 0.1434366405, blue: 0.1819391251, alpha: 0.9037466989)
         ResumeButton.appearance().tintColor = blueColor

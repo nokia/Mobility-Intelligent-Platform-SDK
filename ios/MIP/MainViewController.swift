@@ -30,7 +30,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
     @IBOutlet weak var tokenNumber: UILabel!
     @IBOutlet weak var transportModeDash: UILabel!
     @IBOutlet weak var transportModePredicition: UILabel!
-    var timeline: TimelineManager = PersistentTimelineManager()
+    var timeline: TimelineRecorder!
     var baseClassifier: ActivityTypeClassifier?
     var transportClassifier: ActivityTypeClassifier?
     var loco = LocomotionManager.highlander
@@ -108,8 +108,8 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
     }
     
     func setupLocoKit () {
-        self.timeline = TimelineManager()
-        timeline.activityTypeClassifySamples = true
+        timeline = TimelineRecorder(store: TimelineStore(), classifier: TimelineClassifier.highlander)
+        //timeline.activityTypeClassifySamples = true
         LocoKitService.apiKey = "b78df95038a941de96cb3d7b47d814e1"
         loco.locationManager.allowsBackgroundLocationUpdates = true
         loco.maximumDesiredLocationAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -380,7 +380,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
                 }
                 
                 if motionType?.rawValue == "automotive" {
-                    let results = self.transportClassifier?.classify(sample)
+                    let results = TimelineClassifier.highlander.classify(sample)
                     let bestMatch = results?.first
                     if (bestMatch != nil){
                         motionClassifier = (bestMatch?.name).map { $0.rawValue }!
@@ -458,7 +458,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
             return
         }
         
-        transportClassifier = ActivityTypeClassifier(requestedTypes: ActivityTypeName.transportTypes, coordinate: coordinate)
+        transportClassifier = ActivityTypeClassifier(requestedTypes: ActivityTypeName.extendedTypes, coordinate: coordinate)
     }
 
     

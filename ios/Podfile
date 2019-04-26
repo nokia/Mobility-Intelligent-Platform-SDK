@@ -1,10 +1,11 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '12.1'
+platform :ios, '10.0'
 
 target 'MIP' do
   use_frameworks!
-  pod 'LocoKit'
-  pod 'LocoKit/LocalStore'
+  pod 'LocoKit', :git => 'https://github.com/sobri909/LocoKit.git', :branch => 'develop', :commit => 'b5fe3cfc7573e45e0e432fb345f84afd45d47fee'
+  pod 'LocoKitCore', :git => 'https://github.com/sobri909/LocoKit.git', :branch => 'develop', :commit => 'b5fe3cfc7573e45e0e432fb345f84afd45d47fee'
+  pod 'LocoKit/Timelines', :git => 'https://github.com/sobri909/LocoKit.git', :branch => 'develop', :commit => 'b5fe3cfc7573e45e0e432fb345f84afd45d47fee'
   pod 'SwiftNotes'
   pod 'AWSAuthCore'
   pod 'AWSAuthUI'

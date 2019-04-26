@@ -1,63 +1,66 @@
 PODS:
-  - AppCenter (1.7.1):
-    - AppCenter/Analytics (= 1.7.1)
-    - AppCenter/Crashes (= 1.7.1)
-  - AppCenter/Analytics (1.7.1):
+  - AppCenter (1.14.0):
+    - AppCenter/Analytics (= 1.14.0)
+    - AppCenter/Crashes (= 1.14.0)
+  - AppCenter/Analytics (1.14.0):
     - AppCenter/Core
-  - AppCenter/Core (1.7.1)
-  - AppCenter/Crashes (1.7.1):
+  - AppCenter/Core (1.14.0)
+  - AppCenter/Crashes (1.14.0):
     - AppCenter/Core
-  - AWSAPIGateway (2.6.22):
-    - AWSCore (= 2.6.22)
-  - AWSAuthCore (2.6.22):
-    - AWSCore (= 2.6.22)
-  - AWSAuthUI (2.6.22):
-    - AWSAuthCore (= 2.6.22)
-    - AWSCore (= 2.6.22)
-  - AWSCognitoIdentityProvider (2.6.22):
+  - AWSAPIGateway (2.9.7):
+    - AWSCore (= 2.9.7)
+  - AWSAuthCore (2.9.7):
+    - AWSCore (= 2.9.7)
+  - AWSAuthUI (2.9.7):
+    - AWSAuthCore (= 2.9.7)
+    - AWSCore (= 2.9.7)
+  - AWSCognitoIdentityProvider (2.9.7):
     - AWSCognitoIdentityProviderASF (= 1.0.1)
-    - AWSCore (= 2.6.22)
+    - AWSCore (= 2.9.7)
   - AWSCognitoIdentityProviderASF (1.0.1)
-  - AWSCore (2.6.22)
-  - AWSDynamoDB (2.6.22):
-    - AWSCore (= 2.6.22)
-  - AWSMobileClient (2.6.22):
-    - AWSAuthCore (= 2.6.22)
-  - AWSUserPoolsSignIn (2.6.22):
-    - AWSAuthCore (= 2.6.22)
-    - AWSCognitoIdentityProvider (= 2.6.22)
-  - Charts (3.1.1):
-    - Charts/Core (= 3.1.1)
-  - Charts/Core (3.1.1)
-  - GRDB.swift (2.10.0)
-  - LocoKit (5.2.0):
-    - LocoKit/Base (= 5.2.0)
-  - LocoKit/Base (5.2.0):
-    - LocoKitCore (= 5.2.0)
+  - AWSCore (2.9.7)
+  - AWSDynamoDB (2.9.7):
+    - AWSCore (= 2.9.7)
+  - AWSMobileClient (2.9.7):
+    - AWSAuthCore (= 2.9.7)
+    - AWSCognitoIdentityProvider (= 2.9.7)
+  - AWSUserPoolsSignIn (2.9.7):
+    - AWSAuthCore (= 2.9.7)
+    - AWSCognitoIdentityProvider (= 2.9.7)
+  - Charts (3.3.0):
+    - Charts/Core (= 3.3.0)
+  - Charts/Core (3.3.0)
+  - GRDB.swift (3.7.0)
+  - LocoKit (7.0.0):
+    - LocoKit/Base (= 7.0.0)
+  - LocoKit/Base (7.0.0):
+    - LocoKitCore (= 7.0.0)
     - Upsurge (~> 0.10)
-  - LocoKit/LocalStore (5.2.0):
-    - GRDB.swift (~> 2.10)
+  - LocoKit/Timelines (7.0.0):
+    - GRDB.swift (~> 3)
     - LocoKit/Base
-  - LocoKitCore (5.2.0)
-  - Mapbox-iOS-SDK (4.1.0)
-  - MapboxCoreNavigation (0.18.1):
-    - MapboxDirections.swift (~> 0.21.0)
-    - MapboxMobileEvents (~> 0.4)
-    - Turf (~> 0.1)
-  - MapboxDirections.swift (0.21.0):
+  - LocoKitCore (7.0.0)
+  - Mapbox-iOS-SDK (4.10.0)
+  - MapboxCoreNavigation (0.31.0):
+    - MapboxDirections.swift (~> 0.27.3)
+    - MapboxMobileEvents (~> 0.8.1)
+    - MapboxNavigationNative (~> 6.1.1)
+    - Turf (~> 0.3.0)
+  - MapboxDirections.swift (0.27.3):
     - Polyline (~> 4.2)
-  - MapboxGeocoder.swift (0.8.1)
-  - MapboxMobileEvents (0.4.1)
-  - MapboxNavigation (0.18.1):
-    - Mapbox-iOS-SDK (~> 4.0)
-    - MapboxCoreNavigation (= 0.18.1)
-    - MapboxSpeech (~> 0.0.1)
+  - MapboxGeocoder.swift (0.10.2)
+  - MapboxMobileEvents (0.8.1)
+  - MapboxNavigation (0.31.0):
+    - Mapbox-iOS-SDK (~> 4.3)
+    - MapboxCoreNavigation (= 0.31.0)
+    - MapboxSpeech (~> 0.1.0)
     - Solar (~> 2.1)
-  - MapboxSpeech (0.0.1)
-  - Polyline (4.2.0)
+  - MapboxNavigationNative (6.1.3)
+  - MapboxSpeech (0.1.1)
+  - Polyline (4.2.1)
   - Solar (2.1.0)
   - SwiftNotes (1.1.0)
-  - Turf (0.2.0)
+  - Turf (0.3.0)
   - Upsurge (0.10.2)
 
 DEPENDENCIES:
@@ -69,8 +72,9 @@ DEPENDENCIES:
   - AWSMobileClient
   - AWSUserPoolsSignIn
   - Charts
-  - LocoKit
-  - LocoKit/LocalStore
+  - LocoKit (from `https://github.com/sobri909/LocoKit.git`, commit `b5fe3cfc7573e45e0e432fb345f84afd45d47fee`, branch `develop`)
+  - LocoKit/Timelines (from `https://github.com/sobri909/LocoKit.git`, commit `b5fe3cfc7573e45e0e432fb345f84afd45d47fee`, branch `develop`)
+  - LocoKitCore (from `https://github.com/sobri909/LocoKit.git`, commit `b5fe3cfc7573e45e0e432fb345f84afd45d47fee`, branch `develop`)
   - Mapbox-iOS-SDK
   - MapboxGeocoder.swift
   - MapboxNavigation
@@ -90,14 +94,13 @@ SPEC REPOS:
     - AWSUserPoolsSignIn
     - Charts
     - GRDB.swift
-    - LocoKit
-    - LocoKitCore
     - Mapbox-iOS-SDK
     - MapboxCoreNavigation
     - MapboxDirections.swift
     - MapboxGeocoder.swift
     - MapboxMobileEvents
     - MapboxNavigation
+    - MapboxNavigationNative
     - MapboxSpeech
     - Polyline
     - Solar
@@ -105,34 +108,53 @@ SPEC REPOS:
     - Turf
     - Upsurge
 
+EXTERNAL SOURCES:
+  LocoKit:
+    :branch: develop
+    :commit: b5fe3cfc7573e45e0e432fb345f84afd45d47fee
+    :git: https://github.com/sobri909/LocoKit.git
+  LocoKitCore:
+    :branch: develop
+    :commit: b5fe3cfc7573e45e0e432fb345f84afd45d47fee
+    :git: https://github.com/sobri909/LocoKit.git
+
+CHECKOUT OPTIONS:
+  LocoKit:
+    :commit: 137e122b64ffbcf954dc2d8a228433996c86778e
+    :git: https://github.com/sobri909/LocoKit.git
+  LocoKitCore:
+    :commit: 137e122b64ffbcf954dc2d8a228433996c86778e
+    :git: https://github.com/sobri909/LocoKit.git
+
 SPEC CHECKSUMS:
-  AppCenter: 53349f138e596f2514f7559bb50a7e6e55219f17
-  AWSAPIGateway: 7dad85e97b4431a78639bc8d47c8aba2bc4f3dd0
-  AWSAuthCore: cbe932da2bd77b94e0efa73c81428b3646796427
-  AWSAuthUI: f1bc40e3a42d589efa27153158b78842823e92f7
-  AWSCognitoIdentityProvider: f7d15744ca3d70270de05a212e501f29a4a06307
+  AppCenter: 02c5efe08d3bbab5421ae41d5f7aa7238906b817
+  AWSAPIGateway: b96601b75bb34707e142d8707ae6f240ad37f2d0
+  AWSAuthCore: 567cf5aaeda128c6d6398279a31dcb790b4ae455
+  AWSAuthUI: d82396106fee4c81ee5fa59cac4c56249c6fe0f9
+  AWSCognitoIdentityProvider: 09ad7e72a64a2377180d59063ce3509cf019b515
   AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
-  AWSCore: faae134779f0f6e46a8d426c0ccc02e34466b785
-  AWSDynamoDB: b2f5b6a98d40f875e89a974d56b62c418e872972
-  AWSMobileClient: 091482a8bf8d9a92bc290fb2137892e2055e9b61
-  AWSUserPoolsSignIn: 6df1d4a3293be08a58d8d99d2152fad2bb9616f3
-  Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
-  GRDB.swift: 9859cab1b990eac62ee550d3d2208ec1b44f76af
-  LocoKit: 196b61a7095abd3df43b3543b3e45c87e6b08e63
-  LocoKitCore: 98d8eab0dd9694015e0ba32777f6f50e1f4bb337
-  Mapbox-iOS-SDK: f0a9813d5f08c096c1199eceb57ec6102b19cf54
-  MapboxCoreNavigation: 3754c160e928dbcd58720de808b1f67db52b20e6
-  MapboxDirections.swift: 14d32d1601834e15c930cbab4201e57b0f7a2218
-  MapboxGeocoder.swift: 354fccd4834bae4c5b792428559eb87d994d2cf5
-  MapboxMobileEvents: c198687e2ce67b1a98bd504c260aef35ace78ae2
-  MapboxNavigation: 619fda6eb4b4ce48df8676041f017e4698c8dc35
-  MapboxSpeech: 6cc9b3d53adc2988af3ebc704dd17907b84a3f9f
-  Polyline: 3d69f75bb136357e27291d439d0436c6ebda57a4
+  AWSCore: c98ab96784580d7a141c6f1999aa919ef45a312c
+  AWSDynamoDB: da17a018a85edbcf9fa9b21901ffaabdbdd37e06
+  AWSMobileClient: 6bd1c5ea125af56fd97692a27a7f545fa149304c
+  AWSUserPoolsSignIn: 76299c588a3a8f2352f81b0bc17cb50742895e1c
+  Charts: ec1f57f9340054155691e84d4544a1d239d382c5
+  GRDB.swift: 51cc9e57ae8ff7083a9d674c97925aa1de06aac5
+  LocoKit: 9922d3e81a78e7f71661862eb8cbbd3ab7df90ec
+  LocoKitCore: 30cff6a1e4ac5a32eefe232c19e24fd79485661d
+  Mapbox-iOS-SDK: 8b1b777de7de373cdf000994c91af101ef886477
+  MapboxCoreNavigation: 203f774086328766e5d084e02e3855b7459ea0dd
+  MapboxDirections.swift: af3d8bc8cd80ed6e498dd6ed933f3c348799e1e2
+  MapboxGeocoder.swift: 8cff5dddf98d87838509bf80a5bce5f1d0cf8393
+  MapboxMobileEvents: 0f30fe39687f26fd8f255335053023ba039a0392
+  MapboxNavigation: 188a6e4652da8de68b2e19bf7928a40766e9f3eb
+  MapboxNavigationNative: c7340cdfcb28f88aa02b6e3896151f4cd897f323
+  MapboxSpeech: 59b3984d3f433a443d24acf53097f918c5cc70f9
+  Polyline: 0e9890790292741c8186201a536b6bb6a78d02dd
   Solar: 2dc6e7cc39186cb0c8228fa08df76fb50c7d8f24
   SwiftNotes: 51d71568d7515c5c82aa791b88900cf8059b8beb
-  Turf: 65817136031583da7ea2b43e6611dd10ddbdab2f
+  Turf: c6bdf62d6a70c647874f295dd1cf4eefc0c3e9e6
   Upsurge: 5866beadc3da27f91c5df4ac795deb3f3238d678
 
-PODFILE CHECKSUM: 5a9c185320c8d97b5afe213847c27a4aaf027364
+PODFILE CHECKSUM: 662ce9aa4ade992f7c0212818655eea56edb2146
 
 COCOAPODS: 1.5.3

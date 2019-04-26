@@ -298,7 +298,7 @@ class ProfileManager {
                 }
             }
             DispatchQueue.main.async {
-                let dataSet = PieChartDataSet(values: dataset, label: "")
+                let dataSet = PieChartDataSet(entries: dataset, label: "")
                 dataSet.colors = ChartColorTemplates.material()
                 let data = PieChartData(dataSet: dataSet)
                 modeUser.data = data
