@@ -120,10 +120,10 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   LocoKit:
-    :commit: 137e122b64ffbcf954dc2d8a228433996c86778e
+    :commit: b5fe3cfc7573e45e0e432fb345f84afd45d47fee
     :git: https://github.com/sobri909/LocoKit.git
   LocoKitCore:
-    :commit: 137e122b64ffbcf954dc2d8a228433996c86778e
+    :commit: b5fe3cfc7573e45e0e432fb345f84afd45d47fee
     :git: https://github.com/sobri909/LocoKit.git
 
 SPEC CHECKSUMS:
