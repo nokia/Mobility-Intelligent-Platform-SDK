@@ -11,26 +11,40 @@ import SwiftNotes
 
 class AuthManager {
     static func init_AppDelegate(){
-        AWSSignInManager.sharedInstance().register(signInProvider: AWSCognitoUserPoolsSignInProvider.sharedInstance())
+        AWSMobileClient.sharedInstance().initialize { (userState, error) in
+            if let userState = userState {
+                print("UserState: \(userState.rawValue)")
+            } else if let error = error {
+                print("error: \(error.localizedDescription)")
+            }
+        }
     }
     
     static func signIn(navigationController: UINavigationController) {
-        if !AWSSignInManager.sharedInstance().isLoggedIn {
-            let config = AWSAuthUIConfiguration()
-            config.enableUserPoolsUI = true
-            config.canCancel = false
-            config.logoImage = UIImage(named: "lg_mis")
-            config.backgroundColor = UIColor(red:0.03, green:0.13, blue:0.37, alpha:1.0)
-            AWSAuthUIViewController
-                .presentViewController(with: navigationController,
-                                       configuration: config,
-                                       completionHandler: { (provider: AWSSignInProvider, error: Error?) in
-                                        if error != nil {
-                                            print("Error occurred: \(String(describing: error))")
-                                        } else {
-                                            trigger(Notification.Name("AuthOK"))
-                                        }
-                })
+        AWSMobileClient.sharedInstance().initialize { (userState, error) in
+            if let userState = userState {
+                switch(userState){
+                case .signedIn:
+                    DispatchQueue.main.async {
+                        print("UserState: signedIN")
+                    }
+                case .signedOut:
+                    let config = SignInUIOptions(canCancel: false, logoImage: UIImage(named: "lg_mis"), backgroundColor: UIColor(red:0.03, green:0.13, blue:0.37, alpha:1.0))
+                    AWSMobileClient.sharedInstance().showSignIn(navigationController: navigationController, signInUIOptions: config, { (userState, error) in
+                        if(error == nil){
+                            DispatchQueue.main.async {
+                                print("UserState: Logged IN")
+                                trigger(Notification.Name("AuthOK"))
+                            }
+                        }
+                    })
+                default:
+                    AWSMobileClient.sharedInstance().signOut()
+                }
+                
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
         }
     }
 }
