@@ -44,11 +44,11 @@ class ProfileManager {
             region: AWSRegionType.EUWest1,
             credentialsProvider: AWSMobileClient.sharedInstance().getCredentialsProvider())
         
-        AWSAPI_V3DZAX3WY3_MobilityProfilMobileHubClient.register(with: serviceConfiguration!, forKey: "CloudLogicAPIKey")
+        AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.register(with: serviceConfiguration!, forKey: "CloudLogicAPIKey")
         
         // Fetch the Cloud Logic client to be used for invocation
         let invocationClient =
-            AWSAPI_V3DZAX3WY3_MobilityProfilMobileHubClient(forKey: "CloudLogicAPIKey")
+            AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient(forKey: "CloudLogicAPIKey")
         
         invocationClient.invoke(apiRequest).continueWith { (
             task: AWSTask) -> Any? in
@@ -171,11 +171,11 @@ class ProfileManager {
             region: AWSRegionType.EUWest1,
             credentialsProvider: AWSMobileClient.sharedInstance().getCredentialsProvider())
         
-        AWSAPI_V3DZAX3WY3_MobilityProfilMobileHubClient.register(with: serviceConfiguration!, forKey: "CloudLogicAPIKey")
+        AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.register(with: serviceConfiguration!, forKey: "CloudLogicAPIKey")
         
         // Fetch the Cloud Logic client to be used for invocation
         let invocationClient =
-            AWSAPI_V3DZAX3WY3_MobilityProfilMobileHubClient(forKey: "CloudLogicAPIKey")
+            AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient(forKey: "CloudLogicAPIKey")
         
         invocationClient.invoke(apiRequest).continueWith { (
             task: AWSTask) -> Any? in
@@ -215,9 +215,9 @@ class ProfileManager {
             region: AWSRegionType.EUWest1,
             credentialsProvider: AWSMobileClient.sharedInstance().getCredentialsProvider())
         
-        AWSAPI_V3DZAX3WY3_MobilityProfilMobileHubClient.register(with: serviceConfiguration!, forKey: "CloudLogicAPIKey")
+        AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.register(with: serviceConfiguration!, forKey: "CloudLogicAPIKey")
         let invocationClient =
-            AWSAPI_V3DZAX3WY3_MobilityProfilMobileHubClient(forKey: "CloudLogicAPIKey")
+            AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient(forKey: "CloudLogicAPIKey")
         
         invocationClient.invoke(apiRequest).continueWith { (
             task: AWSTask) -> Any? in
@@ -274,9 +274,9 @@ class ProfileManager {
             region: AWSRegionType.EUWest1,
             credentialsProvider: AWSMobileClient.sharedInstance().getCredentialsProvider())
         
-        AWSAPI_V3DZAX3WY3_MobilityProfilMobileHubClient.register(with: serviceConfiguration!, forKey: "CloudLogicAPIKey")
+        AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.register(with: serviceConfiguration!, forKey: "CloudLogicAPIKey")
         let invocationClient =
-            AWSAPI_V3DZAX3WY3_MobilityProfilMobileHubClient(forKey: "CloudLogicAPIKey")
+            AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient(forKey: "CloudLogicAPIKey")
         
         invocationClient.invoke(apiRequest).continueWith { (
             task: AWSTask) -> Any? in
