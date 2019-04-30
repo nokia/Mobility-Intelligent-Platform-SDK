@@ -1,3 +1,6 @@
+//  Created by Ayoub Benyahya
+//  Copyright © 2019 Ayoub Benyahya. All rights reserved.
+
 import UIKit
 import AWSAuthCore
 import AWSAuthUI

@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-package mip.belllabs.moveinsaclay.amazonaws.mobile.api.idv3dzax3wy3.model;
+package mip.belllabs.moveinsaclay.amazonaws.mobile.api.idpog7i433nj.model;
 
 
 public class ResponseSchema {

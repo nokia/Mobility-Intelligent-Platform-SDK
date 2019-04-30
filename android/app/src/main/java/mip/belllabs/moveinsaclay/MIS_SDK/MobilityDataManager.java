@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TimeZone;
 
-import mip.belllabs.moveinsaclay.amazonaws.mobile.api.id5ajlq8pc10.MotionMobileHubClient;
+import mip.belllabs.moveinsaclay.amazonaws.mobile.api.idpog7i433nj.MotionMobileHubClient;
 
 public class MobilityDataManager {
 

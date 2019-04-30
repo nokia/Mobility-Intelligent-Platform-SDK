@@ -8,6 +8,36 @@
 	<array>
 		<dict>
 			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>DefaultValue</key>
+			<string>support@moveinsalcay.fr</string>
+			<key>Title</key>
+			<string>Support</string>
+			<key>Key</key>
+			<string>Support</string>
+		</dict>
+        <dict>
+            <key>DefaultValue</key>
+            <string>2.4.3</string>
+            <key>Key</key>
+            <string>version</string>
+            <key>Title</key>
+            <string>Version</string>
+            <key>Type</key>
+            <string>PSTitleValueSpecifier</string>
+        </dict>
+        <dict>
+            <key>DefaultValue</key>
+            <string>22</string>
+            <key>Key</key>
+            <string>build</string>
+            <key>Title</key>
+            <string>Build</string>
+            <key>Type</key>
+            <string>PSTitleValueSpecifier</string>
+        </dict>
+		<dict>
+			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
 			<string>Group</string>
@@ -19,26 +49,6 @@
 			<string>db_txt</string>
 			<key>Title</key>
 			<string>DPO</string>
-			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
-		</dict>
-		<dict>
-			<key>DefaultValue</key>
-			<string>2.4.3</string>
-			<key>Key</key>
-			<string>version</string>
-			<key>Title</key>
-			<string>Version</string>
-			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
-		</dict>
-		<dict>
-			<key>DefaultValue</key>
-			<string>22</string>
-			<key>Key</key>
-			<string>build</string>
-			<key>Title</key>
-			<string>Build</string>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 		</dict>

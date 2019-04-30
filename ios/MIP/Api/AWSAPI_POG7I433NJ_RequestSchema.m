@@ -14,13 +14,13 @@
  */
  
 
-#import "AWSAPI_5AJLQ8PC10_ResponseSchema.h"
+#import "AWSAPI_POG7I433NJ_RequestSchema.h"
 
-@implementation AWSAPI_5AJLQ8PC10_ResponseSchema
+@implementation AWSAPI_POG7I433NJ_RequestSchema
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-             @"response": @"response"
+             @"request": @"request"
              };
 }
 

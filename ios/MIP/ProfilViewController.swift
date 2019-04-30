@@ -1,10 +1,5 @@
-//
-//  ProfilViewController.swift
-//  MIP
-//
-//  Created by Ayoub Benyahya on 2/25/19.
+//  Created by Ayoub Benyahya
 //  Copyright © 2019 Ayoub Benyahya. All rights reserved.
-//
 
 import UIKit
 import Charts

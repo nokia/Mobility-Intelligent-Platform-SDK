@@ -13,29 +13,21 @@
  * permissions and limitations under the License.
  */
 
-package mip.belllabs.moveinsaclay.amazonaws.mobile.api.idv3dzax3wy3.model;
+package mip.belllabs.moveinsaclay.amazonaws.mobile.api.idpog7i433nj;
+
+import java.util.*;
 
 
-public class RequestSchema {
-    @com.google.gson.annotations.SerializedName("request")
-    private String request = null;
+
+@com.amazonaws.mobileconnectors.apigateway.annotation.Service(endpoint = "https://pog7i433nj.execute-api.eu-west-1.amazonaws.com/Development")
+public interface MotionMobileHubClient {
+
 
     /**
-     * Gets request
-     *
-     * @return request
-     **/
-    public String getRequest() {
-        return request;
-    }
-
-    /**
-     * Sets the value of request.
-     *
-     * @param request the new value
+     * A generic invoker to invoke any API Gateway endpoint.
+     * @param request
+     * @return ApiResponse
      */
-    public void setRequest(String request) {
-        this.request = request;
-    }
-
+    com.amazonaws.mobileconnectors.apigateway.ApiResponse execute(com.amazonaws.mobileconnectors.apigateway.ApiRequest request);
 }
+

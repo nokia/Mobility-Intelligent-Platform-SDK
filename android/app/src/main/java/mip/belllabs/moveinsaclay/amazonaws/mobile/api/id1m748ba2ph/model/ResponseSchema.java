@@ -13,19 +13,29 @@
  * permissions and limitations under the License.
  */
 
-package mip.belllabs.moveinsaclay.amazonaws.mobile.api.idv3dzax3wy3;
-
-import java.util.*;
+package mip.belllabs.moveinsaclay.amazonaws.mobile.api.id1m748ba2ph.model;
 
 
+public class ResponseSchema {
+    @com.google.gson.annotations.SerializedName("response")
+    private String response = null;
 
-@com.amazonaws.mobileconnectors.apigateway.annotation.Service(endpoint = "https://v3dzax3wy3.execute-api.eu-west-1.amazonaws.com/Development")
-public interface MobilityProfilMobileHubClient {
     /**
-     * A generic invoker to invoke any API Gateway endpoint.
-     * @param request
-     * @return ApiResponse
-     */
-    com.amazonaws.mobileconnectors.apigateway.ApiResponse execute(com.amazonaws.mobileconnectors.apigateway.ApiRequest request);
-}
+     * Gets response
+     *
+     * @return response
+     **/
+    public String getResponse() {
+        return response;
+    }
 
+    /**
+     * Sets the value of response.
+     *
+     * @param response the new value
+     */
+    public void setResponse(String response) {
+        this.response = response;
+    }
+
+}

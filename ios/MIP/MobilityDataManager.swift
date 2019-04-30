@@ -1,3 +1,6 @@
+//  Created by Ayoub Benyahya
+//  Copyright © 2019 Ayoub Benyahya. All rights reserved.
+
 import Foundation
 
 import AWSAuthCore
@@ -55,11 +58,11 @@ class MobilityDataManager {
             region: AWSRegionType.EUWest1,
             credentialsProvider: AWSMobileClient.sharedInstance().getCredentialsProvider())
         
-        AWSAPI_5AJLQ8PC10_MotionMobileHubClient.register(with: serviceConfiguration!, forKey: "CloudLogicAPIKey")
+        AWSAPI_POG7I433NJ_MotionMobileHubClient.register(with: serviceConfiguration!, forKey: "CloudLogicAPIKey")
         
         // Fetch the Cloud Logic client to be used for invocation
         let invocationClient =
-            AWSAPI_5AJLQ8PC10_MotionMobileHubClient(forKey: "CloudLogicAPIKey")
+            AWSAPI_POG7I433NJ_MotionMobileHubClient(forKey: "CloudLogicAPIKey")
         
         invocationClient.invoke(apiRequest).continueWith { (
             task: AWSTask) -> Any? in

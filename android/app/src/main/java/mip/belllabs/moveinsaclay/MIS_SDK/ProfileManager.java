@@ -40,7 +40,7 @@ import java.io.*;
 
 import mip.belllabs.moveinsaclay.R;
 import mip.belllabs.moveinsaclay.Utils.MapTools;
-import mip.belllabs.moveinsaclay.amazonaws.mobile.api.idv3dzax3wy3.MobilityProfilMobileHubClient;
+import mip.belllabs.moveinsaclay.amazonaws.mobile.api.id1m748ba2ph.MobilityProfilMobileHubClient;
 
 import static android.graphics.Color.rgb;
 import static com.google.android.gms.internal.zzahn.runOnUiThread;

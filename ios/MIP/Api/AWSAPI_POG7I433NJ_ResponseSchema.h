@@ -14,14 +14,13 @@
  */
  
 
-#import "AWSAPI_V3DZAX3WY3_RequestSchema.h"
+#import <Foundation/Foundation.h>
+#import <AWSCore/AWSCore.h>
 
-@implementation AWSAPI_V3DZAX3WY3_RequestSchema
+ 
+@interface AWSAPI_POG7I433NJ_ResponseSchema : AWSModel
 
-+ (NSDictionary *)JSONKeyPathsByPropertyKey {
-    return @{
-             @"request": @"request"
-             };
-}
+@property (nonatomic, strong, nonnull) NSString *response;
+
 
 @end

@@ -18,9 +18,9 @@
 #import <AWSCore/AWSCore.h>
 
  
-@interface AWSAPI_V3DZAX3WY3_RequestSchema : AWSModel
+@interface AWSAPI_1M748BA2PH_ResponseSchema : AWSModel
 
-@property (nonatomic, strong, nonnull) NSString *request;
+@property (nonatomic, strong, nonnull) NSString *response;
 
 
 @end

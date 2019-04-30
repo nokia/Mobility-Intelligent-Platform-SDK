@@ -1,3 +1,6 @@
+//  Created by Ayoub Benyahya
+//  Copyright © 2019 Ayoub Benyahya. All rights reserved.
+
 import Foundation
 import AWSAuthCore
 import AWSAuthUI
@@ -30,6 +33,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
     @IBOutlet weak var tokenNumber: UILabel!
     @IBOutlet weak var transportModeDash: UILabel!
     @IBOutlet weak var transportModePredicition: UILabel!
+    let store = TimelineStore()
     var timeline: TimelineRecorder!
     var baseClassifier: ActivityTypeClassifier?
     var transportClassifier: ActivityTypeClassifier?
@@ -74,7 +78,6 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
     
     @IBOutlet weak var newSurveyButton: UIButton!
     @IBOutlet weak var nudgeMap: Map!
-    var nudgeZoneData: [String] = ["CPS_Nudge_Christ_Saclay", "CPS_Nudge_Moulon", "CPS_Nudge_Corbeville", "CPS_Nudge_Mondetour", "CPS_Nudge_Ring_Ulis", "CPS_Nudge_Accès_Massy", "CPS_Nudge_ChillyMazarin"]
     
     @IBOutlet weak var trainSwitch: UISwitch!
     @IBOutlet weak var carSwitch: UISwitch!
@@ -95,22 +98,21 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
         mapboxView.delegate = self
         let coordinate = CLLocationCoordinate2D(latitude: 48.66, longitude: 2.24)
         let camera = MGLMapCamera(lookingAtCenter: coordinate,
-                              fromDistance: 2000,
-                              pitch: 50,
-                              heading: 0.0)
+                                  fromDistance: 2000,
+                                  pitch: 50,
+                                  heading: 0.0)
         mapboxView.camera = camera
         mapboxView.showsUserLocation = true
         mapboxView.setUserTrackingMode(.follow, animated: true)
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(didLongPress(_:)))
         mapboxView.addGestureRecognizer(longPress)
-        //mapSearch.delegate = self
         geocoder = Geocoder.shared
     }
     
     func setupLocoKit () {
-        timeline = TimelineRecorder(store: TimelineStore(), classifier: TimelineClassifier.highlander)
-        //timeline.activityTypeClassifySamples = true
         LocoKitService.apiKey = "b78df95038a941de96cb3d7b47d814e1"
+        ActivityTypesCache.highlander.store = store
+        timeline = TimelineRecorder(store: store, classifier: TimelineClassifier.highlander)
         loco.locationManager.allowsBackgroundLocationUpdates = true
         loco.maximumDesiredLocationAccuracy = kCLLocationAccuracyNearestTenMeters
         loco.recordPedometerEvents = true
@@ -120,10 +122,10 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
         loco.requestLocationPermission(background: true)
         locotionObserver = when(loco, does: .didChangeAuthorizationStatus) {_ in
             switch(CLLocationManager.authorizationStatus()) {
-                case .notDetermined, .restricted, .denied:
-                    self.createSettingsAlertController(title: "Activation GPS", message: "Nous aurions besoin de votre position GPS pour le partage de vos données de mobilité et la navigation. \n Settings > Privacy > Location Services")
-                case .authorizedAlways, .authorizedWhenInUse:
-                    print("Access")
+            case .notDetermined, .restricted, .denied:
+                self.createSettingsAlertController(title: "Activation GPS", message: "Nous aurions besoin de votre position GPS pour le partage de vos données de mobilité et la navigation. \n Settings > Privacy > Location Services")
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("Access")
             }
             print(".didChangeAuthorizationStatus")
             self.setupMap()
@@ -133,9 +135,6 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
     }
     
     func initMonitoringRegions(){
-        /*for nudgeZone in nudgeZoneData {
-            loco.stopMonitorRegion(identifier: nudgeZone)
-        }*/
         when(loco, does: Notification.Name("didRegionEnter")) { notification in
             self.zoneNudge.text = "Dans une Zone Nudge"
             if (self.lastMotionClassifier != nil){
@@ -152,7 +151,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
     
     func identityVerification() {
         if(AWSSignInManager.sharedInstance().isLoggedIn){
-             self.onIdentityVerified()
+            self.onIdentityVerified()
         }
     }
     
@@ -244,7 +243,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
             
             distance_course = 0.0
             distance_token = 0.0
-            duration_course = 0.0 
+            duration_course = 0.0
             lastSample = nil
             firstSample = nil
         }
@@ -337,7 +336,6 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
     //Update UI and send mobility data using motion API
     func motionUpdated() {
         let loco = LocomotionManager.highlander
-        
         let sample = loco.locomotionSample()
         if !sample.isNolo {
             lastLocation = sample.filteredLocations?.last
@@ -414,7 +412,6 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
                 
                 self.gpsVal.text = String(format: "%.4f ; %.4f", lat!, lng!)
                 self.speedVal.text = String (format: "%.2f Km/h", speedkmh)
-                //self.motionVal.text = String.getFrenchTranslationOf(word: motionType.map { $0.rawValue }!)
                 self.modeVal.text = String.getFrenchTranslationOf(word: motionClassifier)
                 self.timestamp.text = Date.getFormattedDate(date: sample.date)
                 self.tripDistance.text = String(format: "%.2f KM", distance_course/1000)
@@ -448,7 +445,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
             MobilityDataManager.doInvokeMotionAPI(locationItem)
         }
     }
-
+    
     func updateTheTransportClassifier() {
         guard let coordinate = LocomotionManager.highlander.filteredLocation?.coordinate else {
             return
@@ -460,7 +457,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
         
         transportClassifier = ActivityTypeClassifier(requestedTypes: ActivityTypeName.extendedTypes, coordinate: coordinate)
     }
-
+    
     
     @IBOutlet weak var surveyHideView: UIView!
     @IBAction func onSurveyClicked(_ sender: Any) {
@@ -472,7 +469,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
                 lat = lastLocation.coordinate.latitude
                 lng = lastLocation.coordinate.longitude
             }
-       
+            
             WalletManager.onSurveyReveled(lat: lat, lng: lng, userid: AWSIdentityManager.default().identityId!, timestamp: NSDate().timeIntervalSince1970)
             userDefaults.set(true, forKey: "survey_V2.4.3_17")
         }
@@ -481,79 +478,6 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true
     }
-    
-    func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
-        //Realtime
-        /*if let url = URL(string: "Navitia or Open System APIs")*/
-        /*let url = URL(fileURLWithPath: Bundle.main.path(forResource: "orsay_car", ofType: "geojson")!)
-         source = MGLShapeSource(identifier: "layer_source", url: url, options: nil)
-         style.addSource(source)*/
-        //}
-        
-        /*DispatchQueue.global().async {
-            guard let url = Bundle.main.url(forResource: "orsay_car", withExtension: "geojson") else {
-                preconditionFailure("Failed to load local GeoJSON file")
-            }
-            
-            guard let data = try? Data(contentsOf: url) else {
-                preconditionFailure("Failed to decode GeoJSON file")
-            }
-            
-            DispatchQueue.main.async {
-                guard let feature = try? MGLShape(data: data, encoding: String.Encoding.utf8.rawValue) as? MGLShapeCollectionFeature else {
-                    fatalError("Could not cast to specified MGLShapeCollectionFeature")
-                }
-                
-                // Create source and add it to the map style.
-                if let currentSource = mapView.style?.source(withIdentifier: "layer_source") as? MGLShapeSource {
-                    if let layer10_toremove = mapView.style?.layer(withIdentifier: "layer10") {
-                        style.removeLayer(layer10_toremove)
-                    }
-                    if let layer20_toremove = mapView.style?.layer(withIdentifier: "layer20") {
-                        style.removeLayer(layer20_toremove)
-                    }
-                    if let layer30_toremove = mapView.style?.layer(withIdentifier: "layer30") {
-                        style.removeLayer(layer30_toremove)
-                    }
-                    style.removeSource(currentSource)
-                }
-                let source = MGLShapeSource(identifier: "layer_source", shape: feature, options: nil)
-                style.addSource(source)
-                
-                let layer10 = MGLFillStyleLayer(identifier: "layer10", source: source)
-                layer10.predicate = NSPredicate(format: "value = 600")
-                layer10.fillColor = NSExpression(forConstantValue:UIColor(red: 10/255, green: 10/255, blue: 255/255, alpha: 0.3))
-                layer10.fillOutlineColor = NSExpression(forConstantValue:UIColor.blue)
-                
-                let layer20 = MGLFillStyleLayer(identifier: "layer20", source: source)
-                layer20.predicate = NSPredicate(format: "value = 1200")
-                layer20.fillColor = NSExpression(forConstantValue:UIColor(red: 10/255, green: 10/255, blue: 155/255, alpha: 0.3))
-                layer20.fillOutlineColor = NSExpression(forConstantValue:UIColor.blue)
-                
-                
-                let layer30 = MGLFillStyleLayer(identifier: "layer30", source: source)
-                layer30.predicate = NSPredicate(format: "value = 1800")
-                layer30.fillColor = NSExpression(forConstantValue:UIColor(red: 10/255, green: 10/255, blue: 55/255, alpha: 0.2))
-                layer30.fillOutlineColor = NSExpression(forConstantValue:UIColor.blue)
-                
-                style.addLayer(layer10)
-                style.insertLayer(layer20, below: layer10)
-                style.insertLayer(layer30, below: layer20)
-            }
-        }*/
-        /*let point = MGLPointFeature()
-        point.coordinate = CLLocationCoordinate2D(latitude: 48.730543, longitude: 2.163099)
-        mShape.append(point)
-        let source = MGLShapeSource(identifier: "nudgeAreas", features: mShape as! [MGLShape & MGLFeature], options: nil)
-        let cicle_layer = MGLCircleStyleLayer(identifier: "nudgeAreas", source: source)
-        cicle_layer.circleRadius = NSExpression(forConstantValue: NSNumber(value: 500.0))
-        cicle_layer.circleOpacity = NSExpression(forConstantValue: 0.45)
-        cicle_layer.circleStrokeColor = NSExpression(forConstantValue: UIColor.white.withAlphaComponent(0.75))
-        cicle_layer.circleStrokeWidth = NSExpression(forConstantValue: 2)
-        cicle_layer.circleColor = NSExpression(forConstantValue: UIColor.green)
-        style.addLayer(cicle_layer)*/
-    }
-    
     
     func mapView(_ mapView: MGLMapView, tapOnCalloutFor annotation: MGLAnnotation) {
         startNavigation()
@@ -637,60 +561,6 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
             }
         }
     }
-    
-    /*func searchBar(_ searchBar: UISearchBar,
-                   textDidChange searchText: String){
-        if (!searchActive){
-            print (searchText)
-        }
-    }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchActive = true;
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchActive = false;
-        self.view.endEditing(true)
-        let options = ForwardGeocodeOptions(query: mapSearch.text!)
-        options.allowedISOCountryCodes = ["FR"]
-        options.focalLocation = CLLocation(latitude: 48.669064, longitude: 2.234261)
-        options.allowedScopes = [.address, .pointOfInterest, .place]
-        options.autocompletesQuery = true
-        if (destinationAnnotation != nil){
-            mapboxView.removeAnnotation(destinationAnnotation!)
-        }
-        let task = geocoder?.geocode(options) { (placemarks, attribution, error) in
-            guard let placemark = placemarks?.first else {
-                return
-            }
-            
-            print(placemark.name)
-            print(placemark.qualifiedName)
-            
-            let coordinate = placemark.location?.coordinate
-            self.destinationAnnotation = MGLPointAnnotation()
-            self.destinationAnnotation?.coordinate = coordinate!
-            self.destinationAnnotation?.title = "Mode Navigation"
-            self.destinationAnnotation?.subtitle = "Avec #MoveInSaclay !"
-            self.mapboxView.addAnnotation(self.destinationAnnotation!)
-            
-            self.calculateRoute(from: (self.mapboxView.userLocation!.coordinate), to: coordinate!) { (route, error) in
-                if error != nil {
-                    print("Error calculating route")
-                }
-            }
-            print("\(coordinate?.latitude), \(coordinate?.longitude)")
-        }
-    }*/
     
     @IBAction func onDeleteData(_ sender: Any) {
         createDeleteDataController();

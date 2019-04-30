@@ -15,7 +15,7 @@
  
 
 
-#import "AWSAPI_5AJLQ8PC10_MotionMobileHubClient.h"
+#import "AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.h"
 #import <AWSCore/AWSCore.h>
 #import <AWSCore/AWSSignature.h>
 #import <AWSCore/AWSSynchronizedMutableDictionary.h>
@@ -43,7 +43,7 @@
 
 @end
 
-@interface AWSAPI_5AJLQ8PC10_MotionMobileHubClient()
+@interface AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient()
 
 @property (nonatomic, strong) AWSServiceConfiguration *configuration;
 
@@ -55,9 +55,9 @@
 
 @end
 
-@implementation AWSAPI_5AJLQ8PC10_MotionMobileHubClient
+@implementation AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient
 
-static NSString *const AWSInfoClientKey = @"AWSAPI_5AJLQ8PC10_MotionMobileHubClient";
+static NSString *const AWSInfoClientKey = @"AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient";
 
 @synthesize configuration = _configuration;
 
@@ -76,10 +76,10 @@ static AWSSynchronizedMutableDictionary *_serviceClients = nil;
                                                            credentialsProvider:nil];
     }
 
-    static AWSAPI_5AJLQ8PC10_MotionMobileHubClient *_defaultClient = nil;
+    static AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient *_defaultClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _defaultClient = [[AWSAPI_5AJLQ8PC10_MotionMobileHubClient alloc] initWithConfiguration:serviceConfiguration];
+        _defaultClient = [[AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient alloc] initWithConfiguration:serviceConfiguration];
     });
 
     return _defaultClient;
@@ -90,13 +90,13 @@ static AWSSynchronizedMutableDictionary *_serviceClients = nil;
     dispatch_once(&onceToken, ^{
         _serviceClients = [AWSSynchronizedMutableDictionary new];
     });
-    [_serviceClients setObject:[[AWSAPI_5AJLQ8PC10_MotionMobileHubClient alloc] initWithConfiguration:configuration]
+    [_serviceClients setObject:[[AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient alloc] initWithConfiguration:configuration]
                         forKey:key];
 }
 
 + (instancetype)clientForKey:(NSString *)key {
     @synchronized(self) {
-        AWSAPI_5AJLQ8PC10_MotionMobileHubClient *serviceClient = [_serviceClients objectForKey:key];
+        AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient *serviceClient = [_serviceClients objectForKey:key];
         if (serviceClient) {
             return serviceClient;
         }
@@ -106,7 +106,7 @@ static AWSSynchronizedMutableDictionary *_serviceClients = nil;
         if (serviceInfo) {
             AWSServiceConfiguration *serviceConfiguration = [[AWSServiceConfiguration alloc] initWithRegion:serviceInfo.region
                                                                                         credentialsProvider:serviceInfo.cognitoCredentialsProvider];
-            [AWSAPI_5AJLQ8PC10_MotionMobileHubClient registerClientWithConfiguration:serviceConfiguration
+            [AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient registerClientWithConfiguration:serviceConfiguration
                                                     forKey:key];
         }
 
@@ -129,7 +129,7 @@ static AWSSynchronizedMutableDictionary *_serviceClients = nil;
     if (self = [super init]) {
         _configuration = [configuration copy];
 
-        NSString *URLString = @"https://5ajlq8pc10.execute-api.eu-west-1.amazonaws.com/Development";
+        NSString *URLString = @"https://1m748ba2ph.execute-api.eu-west-1.amazonaws.com/Development";
         if ([URLString hasSuffix:@"/"]) {
             URLString = [URLString substringToIndex:[URLString length] - 1];
         }

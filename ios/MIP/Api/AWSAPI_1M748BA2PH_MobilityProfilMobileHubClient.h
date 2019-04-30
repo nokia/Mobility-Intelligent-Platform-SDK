@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  The service client object.
  */
-@interface AWSAPI_5AJLQ8PC10_MotionMobileHubClient: AWSAPIGatewayClient
+@interface AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient: AWSAPIGatewayClient
 
 /**
  Returns the singleton service client. If the singleton object does not exist, the SDK instantiates the default service client with `defaultServiceConfiguration` from `[AWSServiceManager defaultServiceManager]`. The reference to this object is maintained by the SDK, and you do not need to retain it manually.
@@ -57,13 +57,13 @@ NS_ASSUME_NONNULL_BEGIN
 
  *Swift*
 
-     let serviceClient = AWSAPI_5AJLQ8PC10_MotionMobileHubClient.defaultClient()
+     let serviceClient = AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.defaultClient()
 
  *Objective-C*
 
-     AWSAPI_5AJLQ8PC10_MotionMobileHubClient *serviceClient = [AWSAPI_5AJLQ8PC10_MotionMobileHubClient defaultClient];
+     AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient *serviceClient = [AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient defaultClient];
 
- Alternatively, this configuration could also be set in the `info.plist` file of your app under `AWS` dictionary with a configuration dictionary by name `AWSAPI_5AJLQ8PC10_MotionMobileHubClient`.
+ Alternatively, this configuration could also be set in the `info.plist` file of your app under `AWS` dictionary with a configuration dictionary by name `AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient`.
 
  @return The default service client.
  */
@@ -79,7 +79,7 @@ NS_ASSUME_NONNULL_BEGIN
      func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
          let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: "YourIdentityPoolId")
          let configuration = AWSServiceConfiguration(region: .USWest2, credentialsProvider: credentialProvider)
-         AWSAPI_5AJLQ8PC10_MotionMobileHubClient.registerClientWithConfiguration(configuration, forKey: "USWest2AWSAPI_5AJLQ8PC10_MotionMobileHubClient")
+         AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.registerClientWithConfiguration(configuration, forKey: "USWest2AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient")
 
          return true
      }
@@ -92,7 +92,7 @@ NS_ASSUME_NONNULL_BEGIN
          AWSServiceConfiguration *configuration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionUSWest2
                                                                               credentialsProvider:credentialsProvider];
 
-         [AWSAPI_5AJLQ8PC10_MotionMobileHubClient registerClientWithConfiguration:configuration forKey:@"USWest2AWSAPI_5AJLQ8PC10_MotionMobileHubClient"];
+         [AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient registerClientWithConfiguration:configuration forKey:@"USWest2AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient"];
 
          return YES;
      }
@@ -101,11 +101,11 @@ NS_ASSUME_NONNULL_BEGIN
 
  *Swift*
 
-     let serviceClient = AWSAPI_5AJLQ8PC10_MotionMobileHubClient(forKey: "USWest2AWSAPI_5AJLQ8PC10_MotionMobileHubClient")
+     let serviceClient = AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient(forKey: "USWest2AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient")
 
  *Objective-C*
 
-     AWSAPI_5AJLQ8PC10_MotionMobileHubClient *serviceClient = [AWSAPI_5AJLQ8PC10_MotionMobileHubClient clientForKey:@"USWest2AWSAPI_5AJLQ8PC10_MotionMobileHubClient"];
+     AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient *serviceClient = [AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient clientForKey:@"USWest2AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient"];
 
  @warning After calling this method, do not modify the configuration object. It may cause unspecified behaviors.
 
@@ -124,7 +124,7 @@ NS_ASSUME_NONNULL_BEGIN
      func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
          let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: "YourIdentityPoolId")
          let configuration = AWSServiceConfiguration(region: .USWest2, credentialsProvider: credentialProvider)
-         AWSAPI_5AJLQ8PC10_MotionMobileHubClient.registerClientWithConfiguration(configuration, forKey: "USWest2AWSAPI_5AJLQ8PC10_MotionMobileHubClient")
+         AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.registerClientWithConfiguration(configuration, forKey: "USWest2AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient")
 
          return true
      }
@@ -137,7 +137,7 @@ NS_ASSUME_NONNULL_BEGIN
          AWSServiceConfiguration *configuration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionUSWest2
                                                                               credentialsProvider:credentialsProvider];
 
-         [AWSAPI_5AJLQ8PC10_MotionMobileHubClient registerClientWithConfiguration:configuration forKey:@"USWest2AWSAPI_5AJLQ8PC10_MotionMobileHubClient"];
+         [AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient registerClientWithConfiguration:configuration forKey:@"USWest2AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient"];
 
          return YES;
      }
@@ -146,11 +146,11 @@ NS_ASSUME_NONNULL_BEGIN
 
  *Swift*
 
-     let serviceClient = AWSAPI_5AJLQ8PC10_MotionMobileHubClient(forKey: "USWest2AWSAPI_5AJLQ8PC10_MotionMobileHubClient")
+     let serviceClient = AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient(forKey: "USWest2AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient")
 
  *Objective-C*
 
-     AWSAPI_5AJLQ8PC10_MotionMobileHubClient *serviceClient = [AWSAPI_5AJLQ8PC10_MotionMobileHubClient clientForKey:@"USWest2AWSAPI_5AJLQ8PC10_MotionMobileHubClient"];
+     AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient *serviceClient = [AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient clientForKey:@"USWest2AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient"];
 
  @param key A string to identify the service client.
 

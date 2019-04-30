@@ -16,8 +16,13 @@
 package mip.belllabs.moveinsaclay.amazonaws.mobile.api.idozwrau7p77;
 
 import java.util.*;
+
+
+
 @com.amazonaws.mobileconnectors.apigateway.annotation.Service(endpoint = "https://ozwrau7p77.execute-api.eu-west-1.amazonaws.com/Development")
 public interface WalletManagerMobileHubClient {
+
+
     /**
      * A generic invoker to invoke any API Gateway endpoint.
      * @param request

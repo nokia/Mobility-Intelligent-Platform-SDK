@@ -13,14 +13,14 @@
  * permissions and limitations under the License.
  */
 
-package mip.belllabs.moveinsaclay.amazonaws.mobile.api.id5ajlq8pc10;
+package mip.belllabs.moveinsaclay.amazonaws.mobile.api.id1m748ba2ph;
 
 import java.util.*;
 
 
 
-@com.amazonaws.mobileconnectors.apigateway.annotation.Service(endpoint = "https://5ajlq8pc10.execute-api.eu-west-1.amazonaws.com/Development")
-public interface MotionMobileHubClient {
+@com.amazonaws.mobileconnectors.apigateway.annotation.Service(endpoint = "https://1m748ba2ph.execute-api.eu-west-1.amazonaws.com/Development")
+public interface MobilityProfilMobileHubClient {
 
 
     /**

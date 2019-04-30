@@ -14,9 +14,9 @@
  */
  
 
-#import "AWSAPI_V3DZAX3WY3_ResponseSchema.h"
+#import "AWSAPI_POG7I433NJ_ResponseSchema.h"
 
-@implementation AWSAPI_V3DZAX3WY3_ResponseSchema
+@implementation AWSAPI_POG7I433NJ_ResponseSchema
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
