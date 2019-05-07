@@ -10,6 +10,7 @@ import Foundation
 import SwiftNotes
 import AWSAuthCore
 import AWSAuthUI
+import AWSMobileClient
 
 extension UIViewController {
     func createSettingsAlertController(title: String, message: String) {
@@ -25,15 +26,14 @@ extension UIViewController {
     }
     
     func createDeleteDataController() {
-        /*let alertController = UIAlertController(title: "Confirmation", message: "Etes-vous sur de vouloir supprimer l'ensemble de vos données MoveInSaclay ?", preferredStyle: .alert)*/
         let alertController = UIAlertController(title: "Confirmation", message: "Etes-vous sur de vouloir vous deconnecter de l'application MoveInSaclay ?", preferredStyle: .alert)
         let settingsAction = UIAlertAction(title: NSLocalizedString("Oui", comment: ""), style: .default) { (UIAlertAction) in
             trigger(Notification.Name("DeleteDATAOK"))
-            AWSSignInManager.sharedInstance().logout(completionHandler: { (_, _) in
-                print("Logout")
-                exit(0)
-            })
             print("DeleteDATAOK")
+            AWSMobileClient.sharedInstance().signOut(completionHandler: { (error) in
+                print("Logout")
+            })
+            exit(0)
         }
         
         let cancelAction = UIAlertAction(title: NSLocalizedString("Non", comment: ""), style: .destructive) { (UIAlertAction) in

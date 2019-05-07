@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4209A3AB220C3D0E00FDAC9E /* NudgeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4209A3AA220C3D0E00FDAC9E /* NudgeArea.swift */; };
-		421021FF2278C29400CB93CF /* AWSAPI_POG7I433NJ_RequestSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = 421021F52278C29400CB93CF /* AWSAPI_POG7I433NJ_RequestSchema.m */; };
-		421022002278C29400CB93CF /* AWSAPI_1M748BA2PH_RequestSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = 421021F62278C29400CB93CF /* AWSAPI_1M748BA2PH_RequestSchema.m */; };
-		421022012278C29400CB93CF /* AWSAPI_POG7I433NJ_ResponseSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = 421021F72278C29400CB93CF /* AWSAPI_POG7I433NJ_ResponseSchema.m */; };
-		421022022278C29400CB93CF /* AWSAPI_1M748BA2PH_ResponseSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = 421021FC2278C29400CB93CF /* AWSAPI_1M748BA2PH_ResponseSchema.m */; };
-		421022032278C29400CB93CF /* AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 421021FD2278C29400CB93CF /* AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.m */; };
-		421022042278C29400CB93CF /* AWSAPI_POG7I433NJ_MotionMobileHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 421021FE2278C29400CB93CF /* AWSAPI_POG7I433NJ_MotionMobileHubClient.m */; };
 		421C3B5C20E57A9C00C892A1 /* MotionActivityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C3B5B20E57A9C00C892A1 /* MotionActivityExtension.swift */; };
 		4223656521B7D09800B18D8F /* MapTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4223656421B7D09800B18D8F /* MapTools.swift */; };
 		4223656721B7D19600B18D8F /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4223656621B7D19600B18D8F /* ProfileManager.swift */; };
@@ -21,6 +15,12 @@
 		4223656B21B7D3F400B18D8F /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4223656A21B7D3F400B18D8F /* AuthManager.swift */; };
 		4223656D21B7D46E00B18D8F /* SurveyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4223656C21B7D46E00B18D8F /* SurveyManager.swift */; };
 		4223656F21B7D82100B18D8F /* WalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4223656E21B7D82100B18D8F /* WalletManager.swift */; };
+		422B29432278BBE300D708B3 /* AWSAPI_POG7I433NJ_MotionMobileHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 422B29332278BBE100D708B3 /* AWSAPI_POG7I433NJ_MotionMobileHubClient.m */; };
+		422B29442278BBE300D708B3 /* AWSAPI_POG7I433NJ_ResponseSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = 422B29342278BBE100D708B3 /* AWSAPI_POG7I433NJ_ResponseSchema.m */; };
+		422B29472278BBE300D708B3 /* AWSAPI_POG7I433NJ_RequestSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = 422B29382278BBE100D708B3 /* AWSAPI_POG7I433NJ_RequestSchema.m */; };
+		422B29482278BBE300D708B3 /* AWSAPI_1M748BA2PH_RequestSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = 422B293C2278BBE200D708B3 /* AWSAPI_1M748BA2PH_RequestSchema.m */; };
+		422B29492278BBE300D708B3 /* AWSAPI_1M748BA2PH_ResponseSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = 422B293D2278BBE200D708B3 /* AWSAPI_1M748BA2PH_ResponseSchema.m */; };
+		422B294A2278BBE300D708B3 /* AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 422B293F2278BBE200D708B3 /* AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.m */; };
 		4237418921DCC54200B7F04A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4237418721DCC54200B7F04A /* OnboardingViewController.swift */; };
 		4237418E21DCF1F200B7F04A /* UITools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4237418D21DCF1F200B7F04A /* UITools.swift */; };
 		424C073422244C51001C1778 /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C073322244C51001C1778 /* ProfilViewController.swift */; };
@@ -28,6 +28,8 @@
 		4255F033219EFC0F0043B3E5 /* AppCenterAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4255F031219EFC0F0043B3E5 /* AppCenterAnalytics.framework */; };
 		4255F034219EFC0F0043B3E5 /* AppCenterCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4255F032219EFC0F0043B3E5 /* AppCenterCrashes.framework */; };
 		4259BB6422302AF40064AD30 /* PortailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259BB6322302AF40064AD30 /* PortailViewController.swift */; };
+		425E59BB21FCEAEC00D7EB38 /* mis_transportMode_scaler.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 425E59B921FCEAEC00D7EB38 /* mis_transportMode_scaler.mlmodel */; };
+		425E59BC21FCEAEC00D7EB38 /* mis_transportMode.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 425E59BA21FCEAEC00D7EB38 /* mis_transportMode.mlmodel */; };
 		427E3750216CE0EC004BE654 /* AWSAPI_OZWRAU7P77_WalletManagerMobileHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E374C216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_WalletManagerMobileHubClient.m */; };
 		427E3751216CE0EC004BE654 /* AWSAPI_OZWRAU7P77_ResponseSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E374E216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_ResponseSchema.m */; };
 		427E3752216CE0EC004BE654 /* AWSAPI_OZWRAU7P77_RequestSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E374F216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_RequestSchema.m */; };
@@ -64,18 +66,6 @@
 /* Begin PBXFileReference section */
 		0471C3E421C942BA250337F9 /* Pods_MIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4209A3AA220C3D0E00FDAC9E /* NudgeArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgeArea.swift; sourceTree = "<group>"; };
-		421021F32278C29400CB93CF /* AWSAPI_1M748BA2PH_ResponseSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWSAPI_1M748BA2PH_ResponseSchema.h; path = MIP/Api/AWSAPI_1M748BA2PH_ResponseSchema.h; sourceTree = "<group>"; };
-		421021F42278C29400CB93CF /* AWSAPI_POG7I433NJ_ResponseSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWSAPI_POG7I433NJ_ResponseSchema.h; path = MIP/Api/AWSAPI_POG7I433NJ_ResponseSchema.h; sourceTree = "<group>"; };
-		421021F52278C29400CB93CF /* AWSAPI_POG7I433NJ_RequestSchema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWSAPI_POG7I433NJ_RequestSchema.m; path = MIP/Api/AWSAPI_POG7I433NJ_RequestSchema.m; sourceTree = "<group>"; };
-		421021F62278C29400CB93CF /* AWSAPI_1M748BA2PH_RequestSchema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWSAPI_1M748BA2PH_RequestSchema.m; path = MIP/Api/AWSAPI_1M748BA2PH_RequestSchema.m; sourceTree = "<group>"; };
-		421021F72278C29400CB93CF /* AWSAPI_POG7I433NJ_ResponseSchema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWSAPI_POG7I433NJ_ResponseSchema.m; path = MIP/Api/AWSAPI_POG7I433NJ_ResponseSchema.m; sourceTree = "<group>"; };
-		421021F82278C29400CB93CF /* AWSAPI_POG7I433NJ_RequestSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWSAPI_POG7I433NJ_RequestSchema.h; path = MIP/Api/AWSAPI_POG7I433NJ_RequestSchema.h; sourceTree = "<group>"; };
-		421021F92278C29400CB93CF /* AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.h; path = MIP/Api/AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.h; sourceTree = "<group>"; };
-		421021FA2278C29400CB93CF /* AWSAPI_POG7I433NJ_MotionMobileHubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWSAPI_POG7I433NJ_MotionMobileHubClient.h; path = MIP/Api/AWSAPI_POG7I433NJ_MotionMobileHubClient.h; sourceTree = "<group>"; };
-		421021FB2278C29400CB93CF /* AWSAPI_1M748BA2PH_RequestSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWSAPI_1M748BA2PH_RequestSchema.h; path = MIP/Api/AWSAPI_1M748BA2PH_RequestSchema.h; sourceTree = "<group>"; };
-		421021FC2278C29400CB93CF /* AWSAPI_1M748BA2PH_ResponseSchema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWSAPI_1M748BA2PH_ResponseSchema.m; path = MIP/Api/AWSAPI_1M748BA2PH_ResponseSchema.m; sourceTree = "<group>"; };
-		421021FD2278C29400CB93CF /* AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.m; path = MIP/Api/AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.m; sourceTree = "<group>"; };
-		421021FE2278C29400CB93CF /* AWSAPI_POG7I433NJ_MotionMobileHubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWSAPI_POG7I433NJ_MotionMobileHubClient.m; path = MIP/Api/AWSAPI_POG7I433NJ_MotionMobileHubClient.m; sourceTree = "<group>"; };
 		421C3B5B20E57A9C00C892A1 /* MotionActivityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionActivityExtension.swift; sourceTree = "<group>"; };
 		4223656421B7D09800B18D8F /* MapTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTools.swift; sourceTree = "<group>"; };
 		4223656621B7D19600B18D8F /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
@@ -83,6 +73,18 @@
 		4223656A21B7D3F400B18D8F /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		4223656C21B7D46E00B18D8F /* SurveyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyManager.swift; sourceTree = "<group>"; };
 		4223656E21B7D82100B18D8F /* WalletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManager.swift; sourceTree = "<group>"; };
+		422B29312278BBE100D708B3 /* AWSAPI_1M748BA2PH_RequestSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWSAPI_1M748BA2PH_RequestSchema.h; path = MIP/Api/AWSAPI_1M748BA2PH_RequestSchema.h; sourceTree = "<group>"; };
+		422B29332278BBE100D708B3 /* AWSAPI_POG7I433NJ_MotionMobileHubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWSAPI_POG7I433NJ_MotionMobileHubClient.m; path = MIP/Api/AWSAPI_POG7I433NJ_MotionMobileHubClient.m; sourceTree = "<group>"; };
+		422B29342278BBE100D708B3 /* AWSAPI_POG7I433NJ_ResponseSchema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWSAPI_POG7I433NJ_ResponseSchema.m; path = MIP/Api/AWSAPI_POG7I433NJ_ResponseSchema.m; sourceTree = "<group>"; };
+		422B29382278BBE100D708B3 /* AWSAPI_POG7I433NJ_RequestSchema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWSAPI_POG7I433NJ_RequestSchema.m; path = MIP/Api/AWSAPI_POG7I433NJ_RequestSchema.m; sourceTree = "<group>"; };
+		422B293A2278BBE200D708B3 /* AWSAPI_1M748BA2PH_ResponseSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWSAPI_1M748BA2PH_ResponseSchema.h; path = MIP/Api/AWSAPI_1M748BA2PH_ResponseSchema.h; sourceTree = "<group>"; };
+		422B293B2278BBE200D708B3 /* AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.h; path = MIP/Api/AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.h; sourceTree = "<group>"; };
+		422B293C2278BBE200D708B3 /* AWSAPI_1M748BA2PH_RequestSchema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWSAPI_1M748BA2PH_RequestSchema.m; path = MIP/Api/AWSAPI_1M748BA2PH_RequestSchema.m; sourceTree = "<group>"; };
+		422B293D2278BBE200D708B3 /* AWSAPI_1M748BA2PH_ResponseSchema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWSAPI_1M748BA2PH_ResponseSchema.m; path = MIP/Api/AWSAPI_1M748BA2PH_ResponseSchema.m; sourceTree = "<group>"; };
+		422B293E2278BBE200D708B3 /* AWSAPI_POG7I433NJ_MotionMobileHubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWSAPI_POG7I433NJ_MotionMobileHubClient.h; path = MIP/Api/AWSAPI_POG7I433NJ_MotionMobileHubClient.h; sourceTree = "<group>"; };
+		422B293F2278BBE200D708B3 /* AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.m; path = MIP/Api/AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.m; sourceTree = "<group>"; };
+		422B29402278BBE200D708B3 /* AWSAPI_POG7I433NJ_ResponseSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWSAPI_POG7I433NJ_ResponseSchema.h; path = MIP/Api/AWSAPI_POG7I433NJ_ResponseSchema.h; sourceTree = "<group>"; };
+		422B29422278BBE300D708B3 /* AWSAPI_POG7I433NJ_RequestSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWSAPI_POG7I433NJ_RequestSchema.h; path = MIP/Api/AWSAPI_POG7I433NJ_RequestSchema.h; sourceTree = "<group>"; };
 		4237418721DCC54200B7F04A /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		4237418D21DCF1F200B7F04A /* UITools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITools.swift; sourceTree = "<group>"; };
 		424C073322244C51001C1778 /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,8 @@
 		4255F032219EFC0F0043B3E5 /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCenterCrashes.framework; sourceTree = "<group>"; };
 		4255F03521A2F0440043B3E5 /* SurveyMonkeyiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SurveyMonkeyiOSSDK.framework; sourceTree = "<group>"; };
 		4259BB6322302AF40064AD30 /* PortailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortailViewController.swift; sourceTree = "<group>"; };
+		425E59B921FCEAEC00D7EB38 /* mis_transportMode_scaler.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = mis_transportMode_scaler.mlmodel; sourceTree = "<group>"; };
+		425E59BA21FCEAEC00D7EB38 /* mis_transportMode.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = mis_transportMode.mlmodel; sourceTree = "<group>"; };
 		427E374A216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_RequestSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWSAPI_OZWRAU7P77_RequestSchema.h; path = MIP/Api/AWSAPI_OZWRAU7P77_RequestSchema.h; sourceTree = "<group>"; };
 		427E374B216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_ResponseSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWSAPI_OZWRAU7P77_ResponseSchema.h; path = MIP/Api/AWSAPI_OZWRAU7P77_ResponseSchema.h; sourceTree = "<group>"; };
 		427E374C216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_WalletManagerMobileHubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWSAPI_OZWRAU7P77_WalletManagerMobileHubClient.m; path = MIP/Api/AWSAPI_OZWRAU7P77_WalletManagerMobileHubClient.m; sourceTree = "<group>"; };
@@ -98,7 +102,7 @@
 		427E374E216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_ResponseSchema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWSAPI_OZWRAU7P77_ResponseSchema.m; path = MIP/Api/AWSAPI_OZWRAU7P77_ResponseSchema.m; sourceTree = "<group>"; };
 		427E374F216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_RequestSchema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWSAPI_OZWRAU7P77_RequestSchema.m; path = MIP/Api/AWSAPI_OZWRAU7P77_RequestSchema.m; sourceTree = "<group>"; };
 		4280F22920E3CE740059AE16 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		428165E720F5EADC001708C4 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = awsconfiguration.json; path = ../awsconfiguration.json; sourceTree = "<group>"; };
+		428165E720F5EADC001708C4 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		428165E920F7A14C001708C4 /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		42A5394C21E8B8B200A112BA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		42BAED9421E4DC2000C8187E /* MIP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MIP.entitlements; sourceTree = "<group>"; };
@@ -191,6 +195,15 @@
 			name = MIS_SDK;
 			sourceTree = "<group>";
 		};
+		425E59B821FCEAD200D7EB38 /* MLClassifier */ = {
+			isa = PBXGroup;
+			children = (
+				425E59B921FCEAEC00D7EB38 /* mis_transportMode_scaler.mlmodel */,
+				425E59BA21FCEAEC00D7EB38 /* mis_transportMode.mlmodel */,
+			);
+			path = MLClassifier;
+			sourceTree = "<group>";
+		};
 		425FDEAC21C2EDFB00F1A289 /* Main UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,18 +229,18 @@
 		42E4E1B320F50039001B7F16 /* APIGateway */ = {
 			isa = PBXGroup;
 			children = (
-				421021F92278C29400CB93CF /* AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.h */,
-				421021FD2278C29400CB93CF /* AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.m */,
-				421021FB2278C29400CB93CF /* AWSAPI_1M748BA2PH_RequestSchema.h */,
-				421021F62278C29400CB93CF /* AWSAPI_1M748BA2PH_RequestSchema.m */,
-				421021F32278C29400CB93CF /* AWSAPI_1M748BA2PH_ResponseSchema.h */,
-				421021FC2278C29400CB93CF /* AWSAPI_1M748BA2PH_ResponseSchema.m */,
-				421021FA2278C29400CB93CF /* AWSAPI_POG7I433NJ_MotionMobileHubClient.h */,
-				421021FE2278C29400CB93CF /* AWSAPI_POG7I433NJ_MotionMobileHubClient.m */,
-				421021F82278C29400CB93CF /* AWSAPI_POG7I433NJ_RequestSchema.h */,
-				421021F52278C29400CB93CF /* AWSAPI_POG7I433NJ_RequestSchema.m */,
-				421021F42278C29400CB93CF /* AWSAPI_POG7I433NJ_ResponseSchema.h */,
-				421021F72278C29400CB93CF /* AWSAPI_POG7I433NJ_ResponseSchema.m */,
+				422B293B2278BBE200D708B3 /* AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.h */,
+				422B293F2278BBE200D708B3 /* AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.m */,
+				422B29312278BBE100D708B3 /* AWSAPI_1M748BA2PH_RequestSchema.h */,
+				422B293C2278BBE200D708B3 /* AWSAPI_1M748BA2PH_RequestSchema.m */,
+				422B293A2278BBE200D708B3 /* AWSAPI_1M748BA2PH_ResponseSchema.h */,
+				422B293D2278BBE200D708B3 /* AWSAPI_1M748BA2PH_ResponseSchema.m */,
+				422B293E2278BBE200D708B3 /* AWSAPI_POG7I433NJ_MotionMobileHubClient.h */,
+				422B29332278BBE100D708B3 /* AWSAPI_POG7I433NJ_MotionMobileHubClient.m */,
+				422B29422278BBE300D708B3 /* AWSAPI_POG7I433NJ_RequestSchema.h */,
+				422B29382278BBE100D708B3 /* AWSAPI_POG7I433NJ_RequestSchema.m */,
+				422B29402278BBE200D708B3 /* AWSAPI_POG7I433NJ_ResponseSchema.h */,
+				422B29342278BBE100D708B3 /* AWSAPI_POG7I433NJ_ResponseSchema.m */,
 				427E374A216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_RequestSchema.h */,
 				427E374F216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_RequestSchema.m */,
 				427E374B216CE0EB004BE654 /* AWSAPI_OZWRAU7P77_ResponseSchema.h */,
@@ -242,6 +255,7 @@
 		42EA289020E0D0E8004A9878 = {
 			isa = PBXGroup;
 			children = (
+				428165E720F5EADC001708C4 /* awsconfiguration.json */,
 				42E4E1B020F4FED7001B7F16 /* Bridging_Header.h */,
 				42EA289B20E0D0E8004A9878 /* MIP */,
 				42EA28B320E0D0EA004A9878 /* MIPTests */,
@@ -265,13 +279,13 @@
 		42EA289B20E0D0E8004A9878 /* MIP */ = {
 			isa = PBXGroup;
 			children = (
-				428165E720F5EADC001708C4 /* awsconfiguration.json */,
 				42BAED9421E4DC2000C8187E /* MIP.entitlements */,
 				425FDEAC21C2EDFB00F1A289 /* Main UI */,
 				4223657021B807E700B18D8F /* MIS_SDK */,
 				42E4E1B320F50039001B7F16 /* APIGateway */,
 				421C3B5A20E57A7F00C892A1 /* Helpers */,
 				4280F22B20E4172E0059AE16 /* Data */,
+				425E59B821FCEAD200D7EB38 /* MLClassifier */,
 				42EA289C20E0D0E8004A9878 /* AppDelegate.swift */,
 				42EA28A620E0D0EA004A9878 /* Assets.xcassets */,
 				42EA28AB20E0D0EA004A9878 /* Info.plist */,
@@ -548,15 +562,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				421022032278C29400CB93CF /* AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.m in Sources */,
 				42EA289D20E0D0E8004A9878 /* AppDelegate.swift in Sources */,
-				421022012278C29400CB93CF /* AWSAPI_POG7I433NJ_ResponseSchema.m in Sources */,
-				421022022278C29400CB93CF /* AWSAPI_1M748BA2PH_ResponseSchema.m in Sources */,
+				422B29432278BBE300D708B3 /* AWSAPI_POG7I433NJ_MotionMobileHubClient.m in Sources */,
 				424C073422244C51001C1778 /* ProfilViewController.swift in Sources */,
 				421C3B5C20E57A9C00C892A1 /* MotionActivityExtension.swift in Sources */,
-				421021FF2278C29400CB93CF /* AWSAPI_POG7I433NJ_RequestSchema.m in Sources */,
 				4237418E21DCF1F200B7F04A /* UITools.swift in Sources */,
-				421022002278C29400CB93CF /* AWSAPI_1M748BA2PH_RequestSchema.m in Sources */,
 				427E3750216CE0EC004BE654 /* AWSAPI_OZWRAU7P77_WalletManagerMobileHubClient.m in Sources */,
 				4223656D21B7D46E00B18D8F /* SurveyManager.swift in Sources */,
 				4209A3AB220C3D0E00FDAC9E /* NudgeArea.swift in Sources */,
@@ -565,13 +575,19 @@
 				4223656F21B7D82100B18D8F /* WalletManager.swift in Sources */,
 				4223656921B7D3C900B18D8F /* MobilityDataManager.swift in Sources */,
 				4259BB6422302AF40064AD30 /* PortailViewController.swift in Sources */,
+				425E59BB21FCEAEC00D7EB38 /* mis_transportMode_scaler.mlmodel in Sources */,
 				4223656721B7D19600B18D8F /* ProfileManager.swift in Sources */,
 				428165EA20F7A14C001708C4 /* Locations.swift in Sources */,
-				421022042278C29400CB93CF /* AWSAPI_POG7I433NJ_MotionMobileHubClient.m in Sources */,
+				425E59BC21FCEAEC00D7EB38 /* mis_transportMode.mlmodel in Sources */,
 				427E3751216CE0EC004BE654 /* AWSAPI_OZWRAU7P77_ResponseSchema.m in Sources */,
+				422B294A2278BBE300D708B3 /* AWSAPI_1M748BA2PH_MobilityProfilMobileHubClient.m in Sources */,
 				4223656521B7D09800B18D8F /* MapTools.swift in Sources */,
+				422B29492278BBE300D708B3 /* AWSAPI_1M748BA2PH_ResponseSchema.m in Sources */,
+				422B29472278BBE300D708B3 /* AWSAPI_POG7I433NJ_RequestSchema.m in Sources */,
 				4280F22A20E3CE770059AE16 /* MainViewController.swift in Sources */,
+				422B29442278BBE300D708B3 /* AWSAPI_POG7I433NJ_ResponseSchema.m in Sources */,
 				4223656B21B7D3F400B18D8F /* AuthManager.swift in Sources */,
+				422B29482278BBE300D708B3 /* AWSAPI_1M748BA2PH_RequestSchema.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,7 +788,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = Bridging_Header.h;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
+				VALID_ARCHS = arm64;
 			};
 			name = Debug;
 		};
@@ -785,6 +801,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 573NUNXNBG;
+				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
@@ -805,7 +822,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = Bridging_Header.h;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
+				VALID_ARCHS = arm64;
 			};
 			name = Release;
 		};

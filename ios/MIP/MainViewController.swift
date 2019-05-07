@@ -1,6 +1,3 @@
-//  Created by Ayoub Benyahya
-//  Copyright © 2019 Ayoub Benyahya. All rights reserved.
-
 import Foundation
 import AWSAuthCore
 import AWSAuthUI
@@ -98,9 +95,9 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
         mapboxView.delegate = self
         let coordinate = CLLocationCoordinate2D(latitude: 48.66, longitude: 2.24)
         let camera = MGLMapCamera(lookingAtCenter: coordinate,
-                                  fromDistance: 2000,
-                                  pitch: 50,
-                                  heading: 0.0)
+                              fromDistance: 2000,
+                              pitch: 50,
+                              heading: 0.0)
         mapboxView.camera = camera
         mapboxView.showsUserLocation = true
         mapboxView.setUserTrackingMode(.follow, animated: true)
@@ -122,10 +119,10 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
         loco.requestLocationPermission(background: true)
         locotionObserver = when(loco, does: .didChangeAuthorizationStatus) {_ in
             switch(CLLocationManager.authorizationStatus()) {
-            case .notDetermined, .restricted, .denied:
-                self.createSettingsAlertController(title: "Activation GPS", message: "Nous aurions besoin de votre position GPS pour le partage de vos données de mobilité et la navigation. \n Settings > Privacy > Location Services")
-            case .authorizedAlways, .authorizedWhenInUse:
-                print("Access")
+                case .notDetermined, .restricted, .denied:
+                    self.createSettingsAlertController(title: "Activation GPS", message: "Nous aurions besoin de votre position GPS pour le partage de vos données de mobilité et la navigation. \n Settings > Privacy > Location Services")
+                case .authorizedAlways, .authorizedWhenInUse:
+                    print("Access")
             }
             print(".didChangeAuthorizationStatus")
             self.setupMap()
@@ -135,6 +132,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
     }
     
     func initMonitoringRegions(){
+        
         when(loco, does: Notification.Name("didRegionEnter")) { notification in
             self.zoneNudge.text = "Dans une Zone Nudge"
             if (self.lastMotionClassifier != nil){
@@ -151,7 +149,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
     
     func identityVerification() {
         if(AWSSignInManager.sharedInstance().isLoggedIn){
-            self.onIdentityVerified()
+             self.onIdentityVerified()
         }
     }
     
@@ -243,7 +241,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
             
             distance_course = 0.0
             distance_token = 0.0
-            duration_course = 0.0
+            duration_course = 0.0 
             lastSample = nil
             firstSample = nil
         }
@@ -335,7 +333,6 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
     
     //Update UI and send mobility data using motion API
     func motionUpdated() {
-        let loco = LocomotionManager.highlander
         let sample = loco.locomotionSample()
         if !sample.isNolo {
             lastLocation = sample.filteredLocations?.last
@@ -352,7 +349,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
             if (speedkmh < 0) {
                 speedkmh = 0
             }
-            updateTheTransportClassifier()
+            //updateTheTransportClassifier()
             
             if (motionType != nil && accelerationXy != nil && accelerationZ != nil){
                 if (speedkmh == 0) {
@@ -363,7 +360,6 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
                     motionType = .walking
                     motionAccuracy = .moving
                 }
-                
                 if (speedkmh > 10 && motionType?.rawValue == "walking") {
                     motionType = .automotive
                     motionAccuracy = .moving
@@ -371,18 +367,19 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
                 
                 if #available(iOS 11.0, *) {
                     if (motionType?.rawValue == "automotive"){
-                        MobilityDataManager.predictTransportMode(basemotionmode:0, lat: lat as! NSNumber, lng: lng as! NSNumber, speed: speedkmh as! NSNumber, predictionTextView: transportModePredicition)
+                        motionClassifier = MobilityDataManager.predictTransportMode(basemotionmode:0, lat: lat as! NSNumber, lng: lng as! NSNumber, speed: speedkmh as! NSNumber, predictionTextView: modeVal)
                     } else {
-                        transportModePredicition.text = String.getFrenchTranslationOf(word: motionType!.rawValue)
+                        modeVal.text = String.getFrenchTranslationOf(word: motionType!.rawValue)
+                        motionClassifier = motionType!.rawValue
                     }
                 }
                 
-                if motionType?.rawValue == "automotive" {
+                /*if motionType?.rawValue == "automotive" {
                     let results = TimelineClassifier.highlander.classify(sample)
                     let bestMatch = results?.first
                     if (bestMatch != nil){
-                        motionClassifier = (bestMatch?.name).map { $0.rawValue }!
-                        if (motionClassifier.contains("car")){
+                        motionClassifier = (bestMatch?.name).map { $0.rawValue }!*/
+                        if (motionType?.rawValue == "automotive"){
                             if (isBus && !isTrain && !isCar){
                                 motionClassifier = "bus"
                             } else if (isTrain && !isBus && !isCar){
@@ -395,28 +392,25 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
                                 motionClassifier = "bus/car"
                             } else if (isTrain && isCar && !isCar) {
                                 motionClassifier = "train/car"
-                            } else if (isTrain && isBus && isCar) {
-                                motionClassifier = "automotive"
-                            } else if (!isTrain && !isBus && !isCar) {
-                                motionClassifier = "car"
                             }
                         }
-                    } else {
+                    /*} else {
                         motionClassifier = "automotive"
                     }
                 } else {
                     motionClassifier = motionType!.rawValue
-                }
+                }*/
                 
                 lastMotionClassifier = motionClassifier
                 
                 self.gpsVal.text = String(format: "%.4f ; %.4f", lat!, lng!)
                 self.speedVal.text = String (format: "%.2f Km/h", speedkmh)
-                self.modeVal.text = String.getFrenchTranslationOf(word: motionClassifier)
+                //self.motionVal.text = String.getFrenchTranslationOf(word: motionType.map { $0.rawValue }!)
+                //self.modeVal.text = String.getFrenchTranslationOf(word: motionClassifier)
                 self.timestamp.text = Date.getFormattedDate(date: sample.date)
                 self.tripDistance.text = String(format: "%.2f KM", distance_course/1000)
                 
-                self.createLocation(timestamp: timestamp!, latitude: lat!, longitude: lng!, baseMotionMode: motionType!.rawValue, transportMotionMode: motionClassifier, modeAccuracy: motionAccuracy.rawValue, xyAcceleration: accelerationXy!, zAcceleration: accelerationZ!, speed: speedkmh)
+                self.createLocation(timestamp: timestamp!, latitude: lat!, longitude: lng!, baseMotionMode: motionType!.rawValue, transportMotionMode: lastMotionClassifier, modeAccuracy: motionAccuracy.rawValue, xyAcceleration: accelerationXy!, zAcceleration: accelerationZ!, speed: speedkmh)
             }
         }
     }
@@ -445,7 +439,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
             MobilityDataManager.doInvokeMotionAPI(locationItem)
         }
     }
-    
+
     func updateTheTransportClassifier() {
         guard let coordinate = LocomotionManager.highlander.filteredLocation?.coordinate else {
             return
