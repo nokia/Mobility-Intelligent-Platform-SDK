@@ -1,6 +1,3 @@
-//  Created by Ayoub Benyahya
-//  Copyright © 2019 Ayoub Benyahya. All rights reserved.
-
 import Foundation
 import AWSCore
 import AWSMobileClient
@@ -31,7 +28,7 @@ class AuthManager {
                 case .signedOut:
                     let config = SignInUIOptions(canCancel: false, logoImage: UIImage(named: "lg_mis"), backgroundColor: UIColor(red:0.03, green:0.13, blue:0.37, alpha:1.0))
                     AWSMobileClient.sharedInstance().showSignIn(navigationController: navigationController, signInUIOptions: config, { (userState, error) in
-                        if(error == nil){
+                        if(error == nil){       //Successful signin
                             DispatchQueue.main.async {
                                 print("UserState: Logged IN")
                                 trigger(Notification.Name("AuthOK"))

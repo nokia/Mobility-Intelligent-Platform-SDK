@@ -22,7 +22,7 @@ class OnboardingViewController: UIViewController  {
         manageUserTagPicker()
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-        let firstOnboarding = userDefaults.bool(forKey: "OnboardingAgree_V2.4.3_22")
+        let firstOnboarding = userDefaults.bool(forKey: "OnboardingAgree_V2.4.3_26")
         if (firstOnboarding){
             actionOnAgree()
         }
@@ -67,7 +67,7 @@ class OnboardingViewController: UIViewController  {
     
     @IBAction func onAgree(_ sender: Any) {
         actionOnAgree()
-        userDefaults.set(true, forKey: "OnboardingAgree_V2.4.3_22")
+        userDefaults.set(true, forKey: "OnboardingAgree_V2.4.3_26")
     }
     
     func actionOnAgree(){

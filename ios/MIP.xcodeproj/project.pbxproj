@@ -67,6 +67,7 @@
 		0471C3E421C942BA250337F9 /* Pods_MIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4209A3AA220C3D0E00FDAC9E /* NudgeArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgeArea.swift; sourceTree = "<group>"; };
 		421C3B5B20E57A9C00C892A1 /* MotionActivityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionActivityExtension.swift; sourceTree = "<group>"; };
+		4220B82A21CB97C600BB0908 /* orsay_car.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = orsay_car.geojson; sourceTree = "<group>"; };
 		4223656421B7D09800B18D8F /* MapTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTools.swift; sourceTree = "<group>"; };
 		4223656621B7D19600B18D8F /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		4223656821B7D3C900B18D8F /* MobilityDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilityDataManager.swift; sourceTree = "<group>"; };
@@ -220,6 +221,7 @@
 		4280F22B20E4172E0059AE16 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4220B82A21CB97C600BB0908 /* orsay_car.geojson */,
 				428165E920F7A14C001708C4 /* Locations.swift */,
 				4209A3AA220C3D0E00FDAC9E /* NudgeArea.swift */,
 			);

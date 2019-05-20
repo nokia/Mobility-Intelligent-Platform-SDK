@@ -1,6 +1,3 @@
-//  Created by Ayoub Benyahya
-//  Copyright © 2019 Ayoub Benyahya. All rights reserved.
-
 import Foundation
 import AWSAuthCore
 import AWSCore

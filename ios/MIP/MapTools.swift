@@ -192,7 +192,7 @@ class Map: MGLMapView{}
 
 class MapTools {
     static var icon = UIImage(named: "dot")
-    static func addRecordstoMap(map: MGLMapView, shape: [MGLShape]) {
+    static func addRecordstoMap(map: MGLMapView, shape: [MGLShape]/*, coordinates: [CLLocationCoordinate2D]*/) {
         guard let style = map.style else { return }
         let source = MGLShapeSource(identifier: "clusteredPorts", features: shape as! [MGLShape & MGLFeature], options: [.clustered: true, .clusterRadius: 65])
         
@@ -227,6 +227,8 @@ class MapTools {
         
         numbersLayer.predicate = NSPredicate(format: "cluster == YES")
         style.addLayer(numbersLayer)
+        /*let polyline = MGLPolyline(coordinates: coordinates, count: UInt(coordinates.count))
+        map.addAnnotation(polyline)*/
     }
     
     static func addNudgeAreastoMap(map: MGLMapView, shape: [MGLShape]) {

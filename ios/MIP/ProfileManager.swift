@@ -1,6 +1,3 @@
-//  Created by Ayoub Benyahya
-//  Copyright © 2019 Ayoub Benyahya. All rights reserved.
-
 import Foundation
 import AWSAuthCore
 import AWSCore
@@ -191,6 +188,7 @@ class ProfileManager {
     
     static func doInvokeProfilAPI_record(map: MGLMapView) {
         var shape = [MGLShape]()
+        //var coordinates = [CLLocationCoordinate2D] ()
         // change the method name, or path or the query string parameters here as desired
         let httpMethodName = "POST"
         // change to any valid path you configured in the API
@@ -226,6 +224,7 @@ class ProfileManager {
                 return nil
             }
             
+            shape.removeAll()
             let result = task.result!
             let responseString =
                 String(data: result.responseData!, encoding: .utf8)
@@ -237,11 +236,12 @@ class ProfileManager {
                     let longitude = Double(records_splitted[1])
                     let point = MGLPointFeature()
                     point.coordinate = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
+                    //coordinates.append(CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!))
                     shape.append(point)
                 }
             }
             DispatchQueue.main.async {
-                MapTools.addRecordstoMap(map: map, shape: shape)
+                MapTools.addRecordstoMap(map: map, shape: shape/*, coordinates: coordinates*/)
             }
             print(result.statusCode)
             return nil

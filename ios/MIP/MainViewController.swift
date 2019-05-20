@@ -52,6 +52,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
     var did_enter_nudgeZone = false
     var source: MGLShapeSource!
     var timer = Timer()
+    var coordinates = [CLLocationCoordinate2D] ()
     
     @IBOutlet weak var zoneNudge: UILabel!
     @IBOutlet weak var distance: UILabel!
@@ -103,13 +104,14 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
         mapboxView.setUserTrackingMode(.follow, animated: true)
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(didLongPress(_:)))
         mapboxView.addGestureRecognizer(longPress)
+        //mapSearch.delegate = self
         geocoder = Geocoder.shared
     }
     
     func setupLocoKit () {
-        LocoKitService.apiKey = "b78df95038a941de96cb3d7b47d814e1"
+        /*LocoKitService.apiKey = "b78df95038a941de96cb3d7b47d814e1"
         ActivityTypesCache.highlander.store = store
-        timeline = TimelineRecorder(store: store, classifier: TimelineClassifier.highlander)
+        timeline = TimelineRecorder(store: store, classifier: TimelineClassifier.highlander)*/
         loco.locationManager.allowsBackgroundLocationUpdates = true
         loco.maximumDesiredLocationAccuracy = kCLLocationAccuracyNearestTenMeters
         loco.recordPedometerEvents = true
@@ -154,7 +156,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
     }
     
     func initSurvey () {
-        let isSurveyRevealed = userDefaults.bool(forKey: "survey_V2.4.3_17")
+        let isSurveyRevealed = userDefaults.bool(forKey: "survey_V2.4.3_26")
         if (!isSurveyRevealed){
             newSurveyButton.setTitle("1 Nouvelle Enquete Disponible", for: .normal)
             SurveyManager.loadSurvey(surveyWeb: surveyWeb)
@@ -262,7 +264,6 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
         }
     }
     
-    //Function to Start Recording Mobility Data and register events observer
     func startRecordingMobilityData(){
         if !CLLocationManager.locationServicesEnabled() {
             self.createSettingsAlertController(title: "Activation GPS", message: "Nous aurions besoin de votre position GPS pour le partage de vos données de mobilité et la navigation. \n Settings > Privacy > Location Services")
@@ -279,7 +280,6 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
         }
     }
     
-    //Function to Stop Recording Mobility Data
     func stopRecordingMobilityData(){
         loco.stopRecording()
         self.removeMotionObservers()
@@ -291,13 +291,12 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
         NotificationCenter.default.removeObserver(mobilityObserver)
     }
     
-    //Data sharing frenquency analysis => one records each 5s when speed changes
     func motionTriggerAnalysis() {
         let sample = loco.locomotionSample()
         if !sample.isNolo {
             let lastSpeed = sample.filteredLocations?.last?.speed
             let lastTimestamp = Int((sample.filteredLocations?.last?.timestamp.timeIntervalSince1970)!)
-            if (lastSpeed != currentSpeed && (lastTimestamp - currentTimestamp>=5)) {
+            if (lastSpeed != currentSpeed && ((lastTimestamp - currentTimestamp)>=5)) {
                 currentSpeed = lastSpeed
                 currentTimestamp = lastTimestamp
                 if (firstShare){
@@ -312,13 +311,15 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
                     duration_course = duration_course + deltaTime
                     
                     distance_token = distance_token + Double(String(format: "%f", deltaDist!))!
-                    if (distance_token>=1000) {
+                    if (distance_token>=10000) {
                         WalletManager.manageTrips(firstSample: firstSample, lastSample: lastSample, tokenUIfield: tokenNumber, tripDistance: Double(distance_token), tripDuration: duration_course)
                         WalletManager.doInvokeWalletAPI(resultField: self.tokenNumber)
                         ProfileManager.doInvokeProfilAPI(type: "distance", resultField: self.distance, mobilityCost: self.mobilityCost, carbonFootprint: self.carboFootpring)
                         ProfileManager.doInvokeProfilAPI(type: "transport", resultField: self.transportModeDash, mobilityCost: self.mobilityCost, carbonFootprint: self.carboFootpring)
                         ProfileManager.doInvokeProfilAPI(type: "speed", resultField: self.avgspeedUser, mobilityCost: self.mobilityCost, carbonFootprint: self.carboFootpring)
                         ProfileManager.doInvokeProfilAPI(type: "duree", resultField: self.duree, mobilityCost: self.mobilityCost, carbonFootprint: self.carboFootpring)
+                        ProfileManager.doInvokeProfilAPI(type: "duree", resultField: self.duree, mobilityCost: self.mobilityCost, carbonFootprint: self.carboFootpring)
+                        ProfileManager.doInvokeProfilAPI_record(map: self.mapboxView)
                         distance_token=0;
                     }
                     
@@ -367,9 +368,8 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
                 
                 if #available(iOS 11.0, *) {
                     if (motionType?.rawValue == "automotive"){
-                        motionClassifier = MobilityDataManager.predictTransportMode(basemotionmode:0, lat: lat as! NSNumber, lng: lng as! NSNumber, speed: speedkmh as! NSNumber, predictionTextView: modeVal)
+                        motionClassifier = MobilityDataManager.predictTransportMode(basemotionmode:0, lat: lat as! NSNumber, lng: lng as! NSNumber, speed: speedkmh as! NSNumber)
                     } else {
-                        modeVal.text = String.getFrenchTranslationOf(word: motionType!.rawValue)
                         motionClassifier = motionType!.rawValue
                     }
                 }
@@ -405,8 +405,7 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
                 
                 self.gpsVal.text = String(format: "%.4f ; %.4f", lat!, lng!)
                 self.speedVal.text = String (format: "%.2f Km/h", speedkmh)
-                //self.motionVal.text = String.getFrenchTranslationOf(word: motionType.map { $0.rawValue }!)
-                //self.modeVal.text = String.getFrenchTranslationOf(word: motionClassifier)
+                self.modeVal.text = String.getFrenchTranslationOf(word: motionClassifier)
                 self.timestamp.text = Date.getFormattedDate(date: sample.date)
                 self.tripDistance.text = String(format: "%.2f KM", distance_course/1000)
                 
@@ -437,6 +436,9 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
             print ("Event will not be sent to MIS Observatory")
         } else {
             MobilityDataManager.doInvokeMotionAPI(locationItem)
+            coordinates.append(CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+            let polyline = MGLPolyline(coordinates: coordinates, count: UInt(coordinates.count))
+            mapboxView.addAnnotation(polyline)
         }
     }
 
@@ -451,21 +453,21 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
         
         transportClassifier = ActivityTypeClassifier(requestedTypes: ActivityTypeName.extendedTypes, coordinate: coordinate)
     }
-    
+
     
     @IBOutlet weak var surveyHideView: UIView!
     @IBAction func onSurveyClicked(_ sender: Any) {
         var lat = -1.0, lng = -1.0
-        let isSurveyRevealed = userDefaults.bool(forKey: "survey_V2.4.3_17")
+        let isSurveyRevealed = userDefaults.bool(forKey: "survey_V2.4.3_26")
         if (!isSurveyRevealed){
             surveyHideView.isHidden = true
             if (lastLocation != nil){
                 lat = lastLocation.coordinate.latitude
                 lng = lastLocation.coordinate.longitude
             }
-            
+       
             WalletManager.onSurveyReveled(lat: lat, lng: lng, userid: AWSIdentityManager.default().identityId!, timestamp: NSDate().timeIntervalSince1970)
-            userDefaults.set(true, forKey: "survey_V2.4.3_17")
+            userDefaults.set(true, forKey: "survey_V2.4.3_26")
         }
     }
     
