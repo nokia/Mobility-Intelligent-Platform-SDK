@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.amazonaws:aws-android-sdk-auth-ui:2.6.31@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/aws-android-sdk-auth-ui-2.6.31.aar/383ba3d0f686a3b3689b0ab2c3cc12b2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/aws-android-sdk-auth-ui-2.6.31.aar/383ba3d0f686a3b3689b0ab2c3cc12b2/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-auth-ui/2.6.31/1af6ceff15fd6562092a552ac0d521be9beebe5d/aws-android-sdk-auth-ui-2.6.31-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

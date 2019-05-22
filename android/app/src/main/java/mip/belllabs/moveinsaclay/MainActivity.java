@@ -69,6 +69,7 @@ import com.mapbox.geojson.Point;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
+import com.mapbox.mapboxsdk.annotations.PolylineOptions;
 import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.geometry.LatLng;
@@ -87,6 +88,8 @@ import com.mapbox.services.android.navigation.ui.v5.NavigationLauncherOptions;
 import com.mapbox.services.android.navigation.ui.v5.route.NavigationMapRoute;
 import com.mapbox.services.android.navigation.v5.navigation.NavigationRoute;
 
+import mip.belllabs.moveinsaclay.Utils.MapTools;
+import mip.belllabs.moveinsaclay.Utils.SVCMotion;
 import net.hockeyapp.android.CrashManager;
 import net.hockeyapp.android.UpdateManager;
 
@@ -172,12 +175,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private SharedPreferences settings;
     private GeofenceManager mGeofenceManager;
-
+    private SVCMotion SVClf;
 
     SharedPreferences.Editor prefEditor;
 
     private Boolean isTrain=false,isBus=false, isCar =false;
     Float val1, val2, val3;
+    List<LatLng> localCoordinates = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -205,20 +209,26 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         WalletManager.doInvokeWalletAPI(tokenTextView, tokenApiClient);
         startActivityTracking();
         checkForUpdates();
+        // Estimators:
+        try {
+            SVClf = new SVCMotion(loadGeoJsonFromAsset("data.json"));
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void setupUIelements(){
         mViewFlipper =(ViewFlipper)findViewById(R.id.view_filpper_id);
         surveyButton=(Button)findViewById(R.id.survey_button_id);
-        gpsStateTV = (TextView) findViewById(R.id.idGpsState);
+        /*gpsStateTV = (TextView) findViewById(R.id.idGpsState);
         speedTV = (TextView) findViewById(R.id.idSpeedState);
-        timeStampTV =(TextView)findViewById(R.id.timeStampId);
+        timeStampTV =(TextView)findViewById(R.id.timeStampId);*/
 
 
-        incitationTV=(TextView)findViewById(R.id.id_incitation);
+        //incitationTV=(TextView)findViewById(R.id.id_incitation);
         transportModeTV=(TextView)findViewById(R.id.transportyModeId);
         onDataSharing =(Switch)findViewById(R.id.dataSharingSwitchId);
-        distanceTV=(TextView)findViewById(R.id.distanceId);
+        //distanceTV=(TextView)findViewById(R.id.distanceId);
         costTextView =(TextView)findViewById(R.id.id_cost_of_mobility_per_day) ;
         carbonTextView =(TextView)findViewById(R.id.id_co2_level);
         distanceTextView =(TextView)findViewById(R.id.id_cost_of_mobility_message);
@@ -257,12 +267,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onSensorChanged(SensorEvent event) {
                 if (dataSharing == false) {
-                    gpsStateTV.setText("off");
+                    /*gpsStateTV.setText("off");
                     speedTV.setText("off");
-                    timeStampTV.setText("off");
+                    timeStampTV.setText("off");*/
                     transportModeTV.setText("off");
-                    distanceTV.setText("off");
-                    incitationTV.setText("off");
+                    /*distanceTV.setText("off");
+                    incitationTV.setText("off");*/
                     distance=0;
                     tokenDistance = 0;
                 } else {
@@ -290,13 +300,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                                     delta_distance = MobilityDataManager.doGetDistance(waypointLat, waypointLng, current_lat, current_lng);
                                     distance = distance + delta_distance;
                                     tokenDistance = tokenDistance + delta_distance;
-                                    if (tokenDistance >= 1) {
+                                    if (tokenDistance >= 10000) {
                                         long duration = (current_timestamp - start_timestamp) / 1000;
                                         ProfileManager.manageEndOfTrip(lat_start, lng_start, current_lat, current_lng, tokenDistance * 1000, duration, start_date, mobilityProfilApiClient);
                                         ProfileManager.doInvokeProfilAPI("distance", distanceTextView, costTextView, carbonTextView, mobilityProfilApiClient);
                                         ProfileManager.doInvokeProfilAPI("speed", speedTextView, costTextView, carbonTextView,mobilityProfilApiClient);
                                         ProfileManager.doInvokeProfilAPI("transport", transportModeTextView, costTextView, carbonTextView, mobilityProfilApiClient);
                                         ProfileManager.doInvokeProfilAPI("duree", dureeTextView, costTextView, carbonTextView, mobilityProfilApiClient);
+                                        ProfileManager.doInvokeProfilAPI_record(getApplicationContext(), mapboxMap, mobilityProfilApiClient);
                                         WalletManager.doInvokeWalletAPI(tokenTextView, tokenApiClient);
                                         tokenDistance = 0;
                                     }
@@ -331,17 +342,20 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                                         } else if (isTrain && !isBus && isCar) {
                                             transportMode = "train/car";
                                         } else {
-                                            transportMode = mActivity;
+                                            double[] my_array = {0., current_lat,  current_lng,  current_speed};
+                                            int prediction = SVClf.predict(my_array);
+                                            transportMode = SVClf.labels[prediction];
+                                            Log.d("Prediction SVC", transportMode);
                                         }
                                     } else {
                                         transportMode = mActivity;
                                         modeAccuracy = mActivity;
                                     }
-                                    distanceTV.setText(df1.format(distance) + " KM");
-                                    gpsStateTV.setText(df.format(current_lat) + " , " + df.format(current_lng));
-                                    speedTV.setText(df1.format(current_speed) + " Km/h");
+                                    //distanceTV.setText(df1.format(distance) + " KM");
+                                    //gpsStateTV.setText(df.format(current_lat) + " , " + df.format(current_lng));
+                                    //speedTV.setText(df1.format(current_speed) + " Km/h");
                                     String curentDate=MobilityDataManager.doCurrentGetUIDate();
-                                    timeStampTV.setText(curentDate);
+                                    //timeStampTV.setText(curentDate);
                                     transportModeTV.setText(transportMode);
                                     zoneTransportMode = transportMode;
                                     Double accelXY = Math.sqrt(Math.pow(val1,2)+Math.pow(val2,2));
@@ -366,6 +380,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                                     }
                                     Log.d("Motion", body.toString());
                                     if (!mActivity.contains(getString(R.string.activity_still))) {
+
+                                        // Add current GPS position to the map
+                                        localCoordinates.add(new LatLng(current_lat, current_lng));
+                                        mapboxMap.addPolyline(new PolylineOptions()
+                                                .addAll(localCoordinates)
+                                                .color(Color.parseColor("#3bb2d0"))
+                                                .width(2));
                                         MobilityDataManager.doInvokeMotionAPI(body, motionApiClient);
                                     }
                                 }
@@ -461,7 +482,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void initSurvey (Button button) {
-        Boolean isServeyDone = settings.getBoolean("onSurveyDone", false);
+        Boolean isServeyDone = settings.getBoolean("onSurveyDone_23", false);
         if(!isServeyDone){
             button.setText("1 Nouvelle Enquete Disponible ");
             SurveyManager.loadSurvey(mWebView);
@@ -475,7 +496,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         lng = current_lng;
                     }
                     WalletManager.onSurveyReveled(lat,lng, "", System.currentTimeMillis(), tokenApiClient);
-                    prefEditor.putBoolean("onSurveyDone",true);
+                    prefEditor.putBoolean("onSurveyDone_23",true);
                     prefEditor.commit();
                     mViewFlipper.showNext();
                 }
@@ -514,27 +535,27 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             dataSharing = true;
             onDataSharing.setThumbTintList(ColorStateList.valueOf(Color.argb(255, 20, 255, 0)));
             onDataSharing.setTrackTintList(ColorStateList.valueOf(Color.argb(255, 20, 153, 0)));
-            gpsStateTV.setText("En attente");
+            /*gpsStateTV.setText("En attente");
             speedTV.setText("En attente");
-            timeStampTV.setText("En attente");
+            timeStampTV.setText("En attente");*/
             transportModeTV.setText("En attente");
-            distanceTV.setText("En attente");
-            incitationTV.setText("En attente");
+            /*distanceTV.setText("En attente");
+            incitationTV.setText("En attente");*/
             trackerGPS.startLocationUpdate();
             firstsharing = true;
-            Toast.makeText(getApplicationContext(),
-                        "Partage de données activé", Toast.LENGTH_LONG).show();
+            /*Toast.makeText(getApplicationContext(),
+                        "Partage de données activé", Toast.LENGTH_LONG).show();*/
             mSensorManager.registerListener(mSensorListener, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
         }else{
             dataSharing=false;
             onDataSharing.setThumbTintList(ColorStateList.valueOf(Color.argb(255, 236, 236, 236)));
             onDataSharing.setTrackTintList(ColorStateList.valueOf(Color.argb(255, 0, 0, 0)));
-            gpsStateTV.setText("off");
+            /*gpsStateTV.setText("off");
             speedTV.setText("off");
-            timeStampTV.setText("off");
+            timeStampTV.setText("off");*/
             transportModeTV.setText("off");
-            distanceTV.setText("off");
-            incitationTV.setText("off");
+            /*distanceTV.setText("off");
+            incitationTV.setText("off");*/
             trackerGPS.stopUsingGPS();
             mSensorManager.unregisterListener(mSensorListener);
             if (lat_start != null && lng_start != null && distance > 0) {
@@ -884,7 +905,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .bearing(0)
                 .tilt(50)
                 .build());
-        trackerGPS.getLocation();
+        Location currentGPS = trackerGPS.getLocation();
 
         if (! trackerGPS.canGetLocation) {
             trackerGPS.showSettingsAlert();

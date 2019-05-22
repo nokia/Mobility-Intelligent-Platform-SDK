@@ -17,7 +17,7 @@ public class PortailActivity extends AppCompatActivity {
 
     public void loadPlus(){
         WebView webView = (WebView) findViewById(R.id.portailWebview);
-        String url= "http://moveinsaclay.strikingly.com";
+        String url= "https://www.moveinsaclay.app";
         webView.setWebViewClient(new WebViewClient()
         {
             @Override

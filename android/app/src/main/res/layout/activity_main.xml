@@ -98,7 +98,7 @@
                     android:background="@color/blueColor"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="Ma Mobilité Actuelle"
+                    android:text="Votre mode actuel"
                     android:textColor="@color/with"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -113,154 +113,13 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="5dp">
-                    <!-- second element of the row that is shown in the screenshot-->
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="38dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/mobility_data_icon" />
-
-                </LinearLayout>
-
-                <LinearLayout
-
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="5dp">
-
-                    <!-- first element of the row that is the part of table but it is invisible-->
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:text="GPS"
-                        android:textAlignment="viewStart"
-                        android:textColor="@color/black"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-                    <!-- second element of the row that is shown in the screenshot-->
-                    <TextView
-                        android:id="@+id/idGpsState"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:text="off"
-                        android:textAlignment="viewStart"
-                        android:textColor="@color/black"
-                        android:textSize="18dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp">
-                    <!-- first element of the row that is the part of table but it is invisible-->
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:text="Vitesse"
-                        android:textAlignment="viewStart"
-                        android:textColor="@color/black"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-                    <!-- second element of the row that is shown in the screenshot-->
-                    <TextView
-                        android:id="@+id/idSpeedState"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:text="off"
-                        android:textAlignment="viewStart"
-                        android:textColor="@color/black"
-                        android:textSize="18dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="5dp">
-                    <!-- first element of the row that is the part of table but it is invisible-->
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:text="Date"
-                        android:textAlignment="viewStart"
-                        android:textColor="@color/black"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-                    <!-- second element of the row that is shown in the screenshot-->
-                    <TextView
-                        android:id="@+id/timeStampId"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:text="off"
-                        android:textAlignment="viewStart"
-                        android:textColor="@color/black"
-                        android:textSize="18dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="5dp">
-                    <!-- first element of the row that is the part of table but it is invisible-->
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:text="Distance"
-                        android:textAlignment="viewStart"
-                        android:textColor="@color/black"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-                    <!-- second element of the row that is shown in the screenshot-->
-
-                    <TextView
-                        android:id="@+id/distanceId"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:text="off"
-                        android:textAlignment="viewStart"
-                        android:textColor="@color/black"
-                        android:textSize="18dp" />
-
-                </LinearLayout>
+                    android:padding="5dp"/>
 
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="5dp">
-                    <!-- first element of the row that is the part of table but it is invisible-->
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:text="Incitation"
-                        android:textColor="@color/black"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-                    <!-- second element of the row that is shown in the screenshot-->
-                    <TextView
-                        android:id="@+id/id_incitation"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:text="off"
-                        android:textAlignment="viewStart"
-                        android:textColor="@color/black"
-                        android:textSize="18dp" />
-
-                </LinearLayout>
+                    android:padding="5dp"/>
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -285,21 +144,17 @@
 
                     android:textAlignment="viewStart">
                     <!-- first element of the row that is the part of table but it is invisible-->
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:text="Mode Detecté "
-                        android:textColor="@color/black"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
                     <!-- second element of the row that is shown in the screenshot-->
                     <TextView
                         android:id="@+id/transportyModeId"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
+                        android:padding="10dp"
                         android:text="off"
+                        android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="18dp" />
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -314,8 +169,25 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Corrigez si erreur dans le mode detecté :"
-                    android:textColor="@color/red" />
+                    android:padding="5dp"
+                    android:text="BETA-Testeur ?"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg_color"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Aidez-nous à progresser dans la detection automatique de votre mode actuel en corrigeant si besoin :"
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -605,7 +477,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Zones d'incitation"
+                    android:text="Zones à eviter"
                     android:textColor="@color/whiteColor"
                     android:textSize="20dp"
                     android:textStyle="bold" />

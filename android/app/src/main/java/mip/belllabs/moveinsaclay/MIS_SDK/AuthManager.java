@@ -22,7 +22,7 @@ public class AuthManager {
                 AuthUIConfiguration config=
                         new AuthUIConfiguration.Builder()
                         .userPools(true)
-                        .canCancel(true)
+                        .canCancel(false)
                         .logoResId(R.drawable.mis_co)
                         .backgroundColor(Color.parseColor("#132358"))
                         .build();

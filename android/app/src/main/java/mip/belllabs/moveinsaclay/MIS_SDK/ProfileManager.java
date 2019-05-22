@@ -340,7 +340,7 @@ public class ProfileManager {
 
                     if (responseContentStream != null) {
 
-
+                        markerCoordinates.clear();
                         final String responseData = IOUtils.toString(responseContentStream);
                         String[] lines=responseData.split(";");
                         int s=lines.length;
