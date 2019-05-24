@@ -1,0 +1,6 @@
+use_frameworks!
+platform :ios, '10'
+
+target 'MoveInSaclaySDK_Example' do
+  pod 'MoveInSaclaySDK', :path => '../'
+end

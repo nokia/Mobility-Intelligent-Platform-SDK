@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>AWS</key>
+  <dict>
+    <key>CognitoUserPool</key>
+    <dict>
+      <key>Default</key>
+      <dict>
+        <key>CognitoUserPoolAppClientId</key>
+        <string>6m4s8ut8mr31d7on9h1p1d3m56</string>
+        <key>CognitoUserPoolAppClientSecret</key>
+        <string>agm0oo3bes7gol8ut0n6m9nbcnh7nhs2f743qbqtao2glqs8llj</string>
+        <key>CognitoUserPoolId</key>
+        <string>eu-west-1_WcuUpSdo3</string>
+        <key>Region</key>
+        <string>eu-west-1</string>
+      </dict>
+    </dict>
+    <key>CredentialsProvider</key>
+    <dict>
+      <key>CognitoIdentity</key>
+      <dict>
+        <key>Default</key>
+        <dict>
+          <key>PoolId</key>
+          <string>eu-west-1:dc5d1ade-5d32-4d2e-b3a2-42423b84e124</string>
+          <key>Region</key>
+          <string>eu-west-1</string>
+        </dict>
+      </dict>
+    </dict>
+    <key>IdentityManager</key>
+    <dict>
+      <key>Default</key>
+      <dict/>
+    </dict>
+    <key>MobileHub</key>
+    <dict>
+      <key>ProjectClientId</key>
+      <string>MobileHub 974c1838-2e5b-49ba-b4f0-dbe353f66dfe aws-my-sample-app-ios-swift-v0.21</string>
+    </dict>
+  </dict>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>${CURRENT_PROJECT_VERSION}</string>
+	<key>NSPrincipalClass</key>
+	<string></string>
+</dict>
+</plist>
