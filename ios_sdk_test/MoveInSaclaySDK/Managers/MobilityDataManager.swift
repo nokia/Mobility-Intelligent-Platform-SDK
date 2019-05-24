@@ -83,7 +83,7 @@ class MobilityDataManager {
     
     @available(iOS 11.0, *)
     static func predictTransportMode(basemotionmode:NSNumber, lat:NSNumber, lng:NSNumber, speed:NSNumber) -> String {
-        let mis_scaler = mis_transportMode_scaler()
+        /*let mis_scaler = mis_transportMode_scaler()
         let mis_model = mis_transportMode()
         guard let mis_scalerInput = try? MLMultiArray(shape:[1,4], dataType:MLMultiArrayDataType.double) else {
             fatalError("Unexpected runtime error. MLMultiArray")
@@ -100,8 +100,8 @@ class MobilityDataManager {
             fatalError("Unexpected runtime error. mis_model")
         }
         print ("Prediction: \(prediction.predicted_transport_mode)")
-        return prediction.predicted_transport_mode
-        return " "
+        return prediction.predicted_transport_mode*/
+        return ""
     }
 }
 

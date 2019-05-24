@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/nokia/Mobility-Intelligent-Platform-SDK.git', :tag => s.version.to_s }
   s.ios.deployment_target = '10.0'
   s.swift_version = '4.2'
-  s.source_files = 'MoveInSaclaySDK/**/*.{h,m,swift,mlmodel}'
+  s.source_files = 'MoveInSaclaySDK/**/*.{h,m,swift}'
   s.static_framework = true
   s.resource_bundles = {
     'MoveInSaclaySDKBundle' => ['MoveInSaclaySDK/**/*.{png,storyboard,xib,xcassets}', 'MoveInSaclaySDK/Resources/*.{plist,bundle,json}']
