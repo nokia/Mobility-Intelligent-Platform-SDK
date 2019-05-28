@@ -1,6 +1,11 @@
 use_frameworks!
 platform :ios, '10'
 
+# Insert your own private specs repo source
+source 'https://bitbucket.org/ayoubbenyahya/mip_ios.git'
+# Standard cocoapods specs source
+source 'https://github.com/CocoaPods/Specs.git'
+
 target 'MoveInSaclaySDK_Example' do
-  pod 'MoveInSaclaySDK', :path => '../'
+  pod 'MoveInSaclaySDK', :git => 'https://bitbucket.org/ayoubbenyahya/mip_ios.git', :tag => '0.1.0'
 end
