@@ -8,4 +8,24 @@
     tools:context=".TestActivity"
     tools:showIn="@layout/activity_test">
 
+    <ImageView
+        android:id="@+id/imgView"
+        android:layout_width="413dp"
+        android:layout_height="322dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mob2i"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="413dp"
+        android:layout_height="224dp"
+        android:text="This is a demo app integrating MoveInX SDK"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

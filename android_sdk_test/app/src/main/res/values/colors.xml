@@ -3,4 +3,12 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <!--
+           To be override by client
+     -->
+    <color name="mix_sdk_toolbar_highlight">#084391</color>
+    <color name="mix_sdk_feature_highlight">#69AA1E</color>
+    <color name="mix_sdk_button_highlight">#1494B4</color>
+    <color name="mix_sdk_clicked_button_highlight">#721195B4</color>
 </resources>

@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <declare-styleable name="ExpandableLayout"><attr format="integer" name="el_duration"/><attr format="boolean" name="el_expanded"/><attr format="float" name="el_parallax"/><attr name="android:orientation"/></declare-styleable>
+
+    <!--
+             To be override by client
+    -->
+
+    <string name="SDK_User_Tag" translatable="false">SDK_M2I</string>
+    <string name="redirect_back_intent" translatable="false">fr.cityway.maas.mobilite_idf</string>
+
+    <string name="redirect_recurrent_trip_tc_intent" translatable="false">fr.cityway.maas.mobilite_idf</string>
+    <string name="redirect_recurrent_trip_tc_app" translatable="false">https://play.google.com/store/apps/details?id=fr.cityway.maas.mobilite_idf</string>
+
+    <string name="redirect_recurrent_trip_velo_intent" translatable="false">fr.geovelo</string>
+    <string name="redirect_recurrent_trip_velo_app" translatable="false">https://play.google.com/store/apps/details?id=fr.geovelo</string>
+
+    <string name="notification_arn_topic_sns" translatable="false">arn:aws:sns:eu-west-1:387809816087:moveinsaclay</string>
+    <string name="notification_arn_platform_sns" translatable="false">arn:aws:sns:eu-west-1:387809816087:app/GCM/AndroidSDK_Test</string>
+
+</resources>
