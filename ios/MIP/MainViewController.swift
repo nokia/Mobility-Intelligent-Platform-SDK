@@ -109,9 +109,6 @@ class MainViewController: UITableViewController, MKMapViewDelegate, MGLMapViewDe
     }
     
     func setupLocoKit () {
-        /*LocoKitService.apiKey = "b78df95038a941de96cb3d7b47d814e1"
-        ActivityTypesCache.highlander.store = store
-        timeline = TimelineRecorder(store: store, classifier: TimelineClassifier.highlander)*/
         loco.locationManager.allowsBackgroundLocationUpdates = true
         loco.maximumDesiredLocationAccuracy = kCLLocationAccuracyNearestTenMeters
         loco.recordPedometerEvents = true
