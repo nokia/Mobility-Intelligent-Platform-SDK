@@ -133,3 +133,8 @@
 1. `git clone`
 2. `pod install`
 3. `Enjoy !`
+
+
+## License
+
+This project is licensed under the BSD-3-Clause license - see the [LICENSE](https://github.com/nokia/Mobility-Intelligent-Platform-SDK/blob/master/LICENSE).
