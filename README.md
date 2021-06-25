@@ -1,4 +1,4 @@
-# Deprecation notice
+# Discontinuation notice
 
 The MoveInSaclay project was discontinued. There will no further active development, bug fix or maintenance.
 
